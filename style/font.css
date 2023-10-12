@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Benzin Bold';
+    src: url('../benzin/Benzin-Bold.woff');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Benzin SemiBold';
+    src: url('../benzin/Benzin-Semibold.woff');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Benzin Medium';
+    src: url('../benzin/Benzin-Medium.woff');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Benzin Regular';
+    src: url('../benzin/Benzin-Regular.woff');
+    font-weight: 400;
+}
