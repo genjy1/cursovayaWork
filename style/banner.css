@@ -1,0 +1,19 @@
+.banner{
+    margin: 37px 0;
+    background: linear-gradient(270deg, #FF8C00 0%, #60C 76.04%);
+}
+
+.banner__container{
+    padding: 16px 0 25px;
+    color: var(--secondary-color);
+    font-family: 'Oddval';
+    font-size: 24px;
+}
+
+.italic{
+    font-family: 'Oddval Italic'
+}
+
+.underline{
+    text-decoration: underline;
+}

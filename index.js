@@ -1,4 +1,6 @@
 'use strict'
+import { createBanner } from "./script/genBanner.js";
+
 
 const doc = window.document;
 const links = doc.querySelectorAll(".link"); // любой нужный селектор
@@ -15,4 +17,7 @@ for (let i = 0; i < linksCount; i++) {
     item[i].classList.toggle('active-link')
 }
 }
+
+
+createBanner()
 

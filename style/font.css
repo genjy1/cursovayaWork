@@ -21,3 +21,13 @@
     src: url('../benzin/Benzin-Regular.woff');
     font-weight: 400;
 }
+
+@font-face {
+    font-family: 'Oddval';
+    src: url('../oddval/Oddval-SemiBold.otf');
+}
+
+@font-face {
+    font-family: 'Oddval Italic';
+    src: url('../oddval/Oddval-SemiBoldItalic.otf');
+}
