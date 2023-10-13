@@ -5,7 +5,7 @@
 
 .banner__container{
     padding: 16px 0 25px;
-    color: var(--secondary-color);
+    color: black;
     font-family: 'Oddval';
     font-size: 24px;
 }

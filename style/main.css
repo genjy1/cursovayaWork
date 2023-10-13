@@ -40,7 +40,7 @@ body{
 
 .nav-list{
     background-color: var(--main-color);
-    padding: 0 31px;
+    padding: 5px 5px;
     border-radius: var(--radius);
 }
 
@@ -50,7 +50,7 @@ body{
 }
 
 .list_item{
-    padding: 25px 5px;
+    padding: 15px 15px;
     border-radius: var(--radius);
 }
 
@@ -60,13 +60,14 @@ body{
 }
 
 .login-btn{
-    padding: 25px 60px;
+    padding: 15px 60px;
     border-radius: 44px;
     font-size: 24px;
     font-family: 'Benzin SemiBold';
     background: transparent;
     border: 4px solid var(--main-color);
     color: var(--secondary-color);
+    cursor: pointer;
 }
 
 .active-link{
