@@ -76,3 +76,38 @@ body{
     /* padding: 5px 25px;
     border-radius: var(--radius); */
 }
+
+.main{
+    margin:0 37px 0 64px ;
+}
+
+.event{
+    border-radius: 31px 31px 0px 0px;
+    background: url('https://img-cdn.hltv.org/eventbanner/N0-VIPSOfPzDcD5LutQIjd.png?ixlib=java-2.1.0&w=1276&s=fd54ae002769c88c3196e6b28162fd88');
+    background-position: 50%;
+    padding: 216px 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.event-information_container{
+    display: flex;
+    color: var(--secondary-color);
+    background: linear-gradient(179deg, rgba(102, 0, 204, 0.00) 17.14%, #60C 68.57%);
+    padding: 0px 64px 16px;
+    justify-content: space-between;
+}
+
+.info-prize{
+    text-align: right;
+}
+
+.event-info{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    color: #FF8C00;
+    font-family: 'Benzin-Semibold';
+    font-size: 36px;
+    font-weight: 600;
+}
