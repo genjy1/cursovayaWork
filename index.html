@@ -5,30 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ESNHub - Главная</title>
     <link rel="stylesheet" href="index.css">
-    <script src="./index.js" defer type="module"></script>
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
 </head>
 <body>
     <header class="header">
-        <div class="header__wrapper container">
-            <div class="logo__wrapper">
-                <a href="./index.html"><img src="./image/logo.svg" alt="ESNHub Logo" class="logo-img"></a>
-            </div>
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li class="list_item"><a href="./pages/news.html" class="header-link link">Новости</a></li>
-                    <li class="list_item"><a href="./pages/articles.html" class="header-link link">Статьи</a></li>
-                    <li class="list_item"><a href="./pages/events.html" class="header-link link">Турниры</a></li>
-                    <li class="list_item"><a href="./pages/stats.html" class="header-link link">Статистика</a></li>
-                </ul>
-            </nav>
-            <div class="header__login">
-                <button class="login-btn">Войти</button>
-            </div>
-        </div>
+        <div class="header__wrapper container"><div class="logo__wrapper"><a href="../index.html"><img src="../image/logo.svg" alt="ESNHub Logo" class="logo-img"></a></div><nav class="nav"><ul class="header__nav-list nav-list"><li class="list_item"><a href="../pages/news.html" class="header-link link">Новости</a></li><li class="list_item"><a href="../pages/articles.html" class="header-link link">Статьи</a></li><li class="list_item"><a href="../pages/events.html" class="header-link link">Турниры</a></li><li class="list_item"><a href="../pages/stats.html" class="header-link link">Статистика</a></li></ul></nav><div class="header__login"><button class="login-btn">Войти</button></div>
     </header>
-    <main class="main">
-        <div class="event container">
+    <main class="main container">
+        <div class="event">
             <div class="event-information_container">
                 <div class="info-main event-info">
                     <p class="event-name">IEM Sydney</p>
@@ -40,6 +24,56 @@
                 </div>
             </div>
         </div>
+        <div class="news-recent">
+            <a href="./pages/article.html" class="recent-news_link link">
+                <img src="./image/778d7a138313301.621b3747bf597.jpg" alt="News Image" class="news-img">
+            </a>
+            <h1 class="news-header secondary-color">G2 ОБЪЯВИЛА О СОЗДАНИИ КОМАНДЫ, ПОСТРОЕННОЙ ВОКРУГ NIKO И HUNTER</h1>
+        </div>
+        <div class="articles">
+            <a class="load-more link">Просмотреть больше статей</a>
+        </div>
     </main>
+    <!-- <footer class="footer">
+        <div class="footer__container container">
+            <div class="row">
+                <a href="../index.html" alt="ESNHub Logo" class="anchor"><img src="./image/logo.svg" alt="ESNHub Logo" class="logo-img"></a>
+                <menu class="footer__menu">
+                    <div class="menu-item column">
+                        <nav class="footer__nav">
+                            <ul class="footer__nav-list nav-list">
+                                <li class="footer__list_item"><a href="../index.html" class="footer-link link">Главная</a></li>
+                                <li class="footer__list_item"><a href="./pages/news.html" class="footer-link link">Новости</a></li>
+                                <li class="footer__list_item"><a href="./pages/articles.html" class="footer-link link">Статьи</a></li>
+                                <li class="footer__list_item"><a href="./pages/events.html" class="footer-link link">Турниры</a></li>
+                                <li class="footer__list_item"><a href="./pages/events.html" class="footer-link link">Статистика</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="menu-item column">
+                        <nav class="footer__nav">
+                            <ul class="footer__nav-list nav-list">
+                                <li class="footer__list_item"><a href="#" class="footer-link link">Политика конфиденциальности</a></li>
+                                <li class="footer__list_item"><a href="#" class="footer-link link">Условия использования</a></li>
+                                <li class="footer__list_item"><a href="#" class="footer-link link">О нас</a></li>
+                                <li class="footer__list_item"><a href="#" class="footer-link link">Редакционная политика</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="menu-item column">
+                        <nav class="footer__nav">
+                            <ul class="footer__nav-list nav-list">
+                                <li class="footer__list_item"><a href="#" class="footer-link link">Контакты:</a></li>
+                                <li class="footer__list_item"><a href="mailto:info@esnhub.org" class="footer-link link">email: info@esnhub.org</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </menu>
+                <img src="./image/restriction.svg" alt="Age Restriction" class="footer-restriction">
+            </div>
+            <div class="row"><p class="copyright">Разработка и дизайн студента СПКМО группы ИСП-009 Майорова Даниила Николаевича © 2023</p></div>
+        </div>
+    </footer> -->
 </body>
+<script src="./index.js" type="module"></script>
 </html>

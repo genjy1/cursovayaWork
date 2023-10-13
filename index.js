@@ -1,12 +1,21 @@
 'use strict'
 import { createBanner } from "./script/genBanner.js";
-
+import { createFooter } from "./script/footer.js";
 
 const doc = window.document;
-const links = doc.querySelectorAll(".link"); // любой нужный селектор
+const links = doc.querySelectorAll(".header-link"); // любой нужный селектор
 const linksCount = links.length;
 const currentURL = doc.URL;
 const item = doc.querySelectorAll('.list_item')
+const isMain = doc.querySelector('.main');
+
+console.log(isMain);
+
+if (isMain === null) {
+  const main = document.createElement('main');
+  main.classList.add('main')
+  document.body.append(main)
+}
 
 for (let i = 0; i < linksCount; i++) {
     let linkURL = links[i].href;
@@ -18,6 +27,6 @@ for (let i = 0; i < linksCount; i++) {
 }
 }
 
-
 createBanner()
+createFooter()
 
