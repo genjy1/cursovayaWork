@@ -2,6 +2,8 @@
 import { createBanner } from "./script/genBanner.js";
 import { createFooter } from "./script/footer.js";
 import { createArticle } from "./script/news.js";
+import { createStatsRow } from "./script/createStatsRow.js";
+import { createActualNews } from "./script/createActualNews.js";
 
 const doc = window.document;
 const links = doc.querySelectorAll(".header-link"); // любой нужный селектор
@@ -30,6 +32,10 @@ for (let i = 0; i < linksCount; i++) {
     links[i].classList.toggle("active-link");
     item[i].classList.toggle('active-link')
 }
+}
+
+if (currentURL.includes('stats.html')) {
+  createStatsRow()
 }
 
 createBanner()
