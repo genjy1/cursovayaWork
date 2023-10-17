@@ -1,6 +1,8 @@
 'use strict'
 import { createBanner } from "./script/genBanner.js";
 import { createFooter } from "./script/footer.js";
+import { createStatsRow } from "./script/createStatsRow.js";
+import { createActualNews } from "./script/createActualNews.js";
 
 const doc = window.document;
 const links = doc.querySelectorAll(".header-link"); // любой нужный селектор
@@ -8,8 +10,6 @@ const linksCount = links.length;
 const currentURL = doc.URL;
 const item = doc.querySelectorAll('.list_item')
 const isMain = doc.querySelector('.main');
-
-console.log(isMain);
 
 if (isMain === null) {
   const main = document.createElement('main');
@@ -25,6 +25,10 @@ for (let i = 0; i < linksCount; i++) {
     links[i].classList.toggle("active-link");
     item[i].classList.toggle('active-link')
 }
+}
+
+if (currentURL.includes('stats.html')) {
+  createStatsRow()
 }
 
 createBanner()
