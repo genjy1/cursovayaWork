@@ -1,0 +1,15 @@
+.article__wrapper{
+    display: flex;
+    gap: 40px;
+}
+
+.article-heading{
+    color: var(--secondary-color);
+    font-size: 32px;
+    font-family: 'Benzin Bold';
+    margin-bottom: 64px;
+}
+
+.image__wrapper-img{
+    max-width: 660px;
+}
