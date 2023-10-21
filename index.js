@@ -56,6 +56,7 @@ if (currentURL.includes('news')) {
 if (!currentURL.includes('index')) {
   const header = document.querySelector('.header');
   header.insertAdjacentHTML('afterend', createBanner())
+  console.log('1');
 }else{
   const main = document.querySelector('main')
   main.insertAdjacentHTML('beforebegin', createBanner())
