@@ -1,6 +1,16 @@
 @import url('./banner.css');
 @import url('./footer.css');
 
+@keyframes bghover {
+    from{
+        background-size: 0%;
+    }
+
+    to{
+        background-size: 100%;
+    }
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -17,6 +27,7 @@
 
 body{
     background-color: #010101;
+    scroll-behavior: smooth;
 }
 
 .secondary-color{
@@ -153,3 +164,28 @@ body{
     background: #35006A;
     cursor: pointer;
 }
+
+.input{
+    width: 333px;
+    height: 44px;
+    border: 1px solid #FF8C00;
+    text-align: center;
+    border-radius: 9px;
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.input::placeholder{
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.input:hover{
+    background: linear-gradient(90deg, #FF8C00 0%, #60C 100%) no-repeat;
+    animation: bghover ease-out 2s;
+}
+

@@ -1,0 +1,41 @@
+.register-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px solid #6600CC;
+    border-radius: 16px;
+    max-width: 696px;
+}
+
+.register-heading{
+    font-family: 'Benzin Bold';
+    font-size: 32px;
+    color: #6600CC;
+    text-align: center;
+}
+
+.register__wrapper{
+    display: grid;
+    grid-template-columns: 1fr 310px;
+    gap: 24px;
+    margin: 120px 0;
+}
+
+.submit{
+    margin: 85px 0;
+    width: 100%;
+}
+
+.register-input{
+    max-width: 310px;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#register{
+    padding: 87px 26px 75px;
+}

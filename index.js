@@ -4,6 +4,8 @@ import { createFooter } from "./script/footer.js";
 import { createArticle } from "./script/news.js";
 import { createStatsRow } from "./script/createStatsRow.js";
 import { createActualNews } from "./script/createActualNews.js";
+import { controlModal, createModal } from "./script/modal.js";
+import { register } from "./script/register.js";
 
 const doc = window.document;
 const links = doc.querySelectorAll(".header-link"); // любой нужный селектор
@@ -11,10 +13,6 @@ const linksCount = links.length;
 const currentURL = doc.URL;
 const item = doc.querySelectorAll('.list_item')
 const isMain = doc.querySelector('.main');
-
-
-
-  
 
 
 if (isMain === null) {
@@ -37,9 +35,17 @@ for (let i = 0; i < linksCount; i++) {
 if (currentURL.includes('stats.html')) {
   createStatsRow()
 }
+createModal();
+controlModal();
+createBanner();
+createFooter();
 
-createBanner()
-createFooter()
+if (currentURL.includes('register')) {
+  const header = document.querySelector('.header');
+  header.insertAdjacentText('afterend', " ")
+  console.log(currentURL.includes('register'));
+  register()
+}
 
 if (currentURL.includes('news')) {
   console.log(currentURL.includes('news'));
@@ -47,3 +53,10 @@ if (currentURL.includes('news')) {
   createArticle()
 }
 
+if (!currentURL.includes('index')) {
+  const header = document.querySelector('.header');
+  header.insertAdjacentHTML('afterend', createBanner())
+}else{
+  const main = document.querySelector('main')
+  main.insertAdjacentHTML('beforebegin', createBanner())
+}

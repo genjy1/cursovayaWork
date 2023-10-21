@@ -1,6 +1,12 @@
 {
-    "players": [],
-    "articles" : [],
-    "teams":[],
-    "users":[]
+  "players": [],
+  "articles": [],
+  "teams": [],
+  "users": [
+    {
+      "email": "idontknower1997@gmail.com",
+      "password": "u8wkmuReZpPp4kR",
+      "id": 1
+    }
+  ]
 }
