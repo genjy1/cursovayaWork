@@ -17,6 +17,6 @@ export const register = () => {
             },
             body:JSON.stringify(newUser),
         })
-        console.log(newUser);
+        fetch('http://localhost:3000/users').then(response => console.log(response.json()));
     })
 }
