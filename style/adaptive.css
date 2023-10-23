@@ -1,0 +1,43 @@
+.logo__link-mobile{
+    color: #35006A;
+    font-family: 'Benzin Bold';
+    font-size: 64px;
+}
+
+.mobile__header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.burger{
+    display: block;
+    width: 49px;
+    height: 5px;
+    background-color: #35006A;
+    position: absolute;
+    top:39px;
+    border-radius:8px;
+    left: 357px;
+}
+
+.burger::before{
+    content: '';
+    display: block;
+    width: 49px;
+    height: 5px;
+    background-color: #35006A;
+    position: relative;
+    bottom: -18px;
+    border-radius:8px;
+}
+
+.burger::after{
+    content: '';
+    display: block;
+    width: 49px;
+    height: 5px;
+    background-color: #35006A;
+    position: relative;
+    top:-22px;
+    border-radius:8px;
+}

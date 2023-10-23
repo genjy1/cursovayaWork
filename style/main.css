@@ -1,6 +1,112 @@
 @import url('./banner.css');
 @import url('./footer.css');
 
+@media screen and (max-width:425px) {
+
+    .header{
+        display: none;
+    }
+
+    .banner{
+        display: none;
+    }
+
+    .event{
+        width: 380px;
+        background-size: cover;
+    }
+
+    .container{
+        width: 380px;
+    }
+
+    .news-img{
+        width: 380px;
+    }
+
+    .load-more{
+        width: 380px;
+        padding: 0;
+        display: none;
+    }
+
+    .row{
+        max-width: 380px;
+        flex-direction: column;
+        align-items:flex-start;
+        font-weight: 700;
+    }
+    .footer__menu{
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+
+    .copyright{
+        text-align: center;
+    }
+
+    .news-header{
+        font-size: 14px
+    }
+
+    .footer-restriction{
+        position: relative;
+        top: -503px;
+        left: 298px;
+        width: 46px;
+    }
+
+    .event-info:nth-child(1){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        font-size: 20px;
+    }
+
+    .event-info:nth-child(2){
+        display: none;
+    }
+
+}
+
+@media screen and (min-width:426px) {
+    .row:nth-child(2){
+        margin: 64px 233px 10px;
+    }
+
+    .news-header{
+        font-size: 36px
+    }
+
+    .row{
+        align-items: self-start;
+    }
+
+    .footer__menu{
+        margin: 0 405px 0 61px;
+    }
+
+    .event{
+        margin-top: 33px;
+        /* border-radius: 31px 31px 0px 0px; */
+        background: url('https://img-cdn.hltv.org/eventbanner/N0-VIPSOfPzDcD5LutQIjd.png?ixlib=java-2.1.0&w=1276&s=fd54ae002769c88c3196e6b28162fd88');
+        background-position: 50%;
+        padding: 216px 0 0;
+        background-repeat: no-repeat;
+    }
+
+    .event-info{
+        display: flex;
+    }
+
+    .load-more{
+        padding: 8px 560px;
+    }
+}
+
 @keyframes bghover {
     from{
         background-size: 0%;
@@ -95,13 +201,8 @@ body{
 }
 
 .event{
-    margin-top: 33px;
-    /* border-radius: 31px 31px 0px 0px; */
     background: url('https://img-cdn.hltv.org/eventbanner/N0-VIPSOfPzDcD5LutQIjd.png?ixlib=java-2.1.0&w=1276&s=fd54ae002769c88c3196e6b28162fd88');
     background-position: 50%;
-    padding: 216px 0 0;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .event-information_container{
@@ -117,7 +218,6 @@ body{
 }
 
 .event-info{
-    display: flex;
     flex-direction: column;
     gap: 32px;
     color: #FF8C00;
@@ -130,10 +230,6 @@ body{
     font-family: 'Inter', 'sans-serif';
 }
 
-.row:nth-child(2){
-    margin: 64px 233px 10px;
-}
-
 .copyright{
     color: #585858;
     font-family: 'Inter', 'sans-serif';
@@ -143,7 +239,6 @@ body{
 
 .news-header{
     margin-left: 9px;
-    font-size: 36px;
     font-weight: 600;
     max-width: 1007px;
 }
@@ -158,7 +253,7 @@ body{
     font-size: 12px;
     text-align: center;
     margin-top: 32px;
-    padding: 8px 560px;
+    max-width: 1360px;
     border-radius: 4px;
     border-bottom: 3px solid #60C;
     background: #35006A;

@@ -9,11 +9,9 @@
 
 .row{
     display: flex;
-    align-items: self-start;
 }
 
 .footer__menu{
-    margin: 0 405px 0 61px;
     display: flex;
     gap: 64px;
 }

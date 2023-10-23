@@ -35,10 +35,55 @@ for (let i = 0; i < linksCount; i++) {
 if (currentURL.includes('stats.html')) {
   createStatsRow()
 }
+
+const adaptive = () => {
+  const mobileHeader = document.createElement('header');
+  window.addEventListener('resize', () => {
+    if (window.outerWidth < 426) {
+      console.log(window.outerWidth);
+      const mobileLogoLink = document.createElement('a');
+      const burgerMenu = document.createElement('span');
+  
+  
+      burgerMenu.classList.add('burger');
+      burgerMenu.addEventListener('click', () => {
+        localStorage.setItem('burgerOpened',true);
+        mobileLogoLink.style.color = "white";
+        burgerMenu.style.backgroundColor = "white";
+        mobileHeader.style.backgroundColor = "white";
+        if (localStorage.getItem('burgerOpened')) {
+          mobileLogoLink.style.color = "#35006A";
+          burgerMenu.style.backgroundColor = "#35006A";
+          mobileHeader.style.backgroundColor = "transparent";
+          localStorage.removeItem('burgerOpened',false);
+        }
+      })
+      mobileLogoLink.classList.add('logo__link-mobile');
+      mobileLogoLink.classList.add('link');
+      mobileLogoLink.href = '/';
+      mobileLogoLink.textContent = 'E';
+      mobileHeader.append(mobileLogoLink, burgerMenu)
+      mobileHeader.classList.add('mobile__header');
+      mobileHeader.classList.add('container')
+      document.body.insertAdjacentElement('afterbegin', mobileHeader)
+    }else{
+      mobileHeader.innerHTML = "";
+      mobileLogoLink.style.color = "#35006A";
+      burgerMenu.style.backgroundColor = "#35006A";
+      mobileHeader.style.backgroundColor = "transparent";
+      mobileHeader.remove();
+
+      console.log(window.outerWidth);
+    }
+  })
+}
+
+
 createModal();
 controlModal();
 createBanner();
 createFooter();
+adaptive()
 
 if (currentURL.includes('register')) {
   const header = document.querySelector('.header');

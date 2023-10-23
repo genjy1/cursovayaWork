@@ -24,7 +24,8 @@ const controlModal = () => {
 
     cross.addEventListener('click', () => {
         modal.classList.remove('modal-active');
-        modal.classList.add('modal')
+        modal.classList.add('modal');
+        form.reset();
     })
 
     window.addEventListener('click', ({target}) => {
