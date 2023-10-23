@@ -13,7 +13,6 @@
 
 .footer__menu{
     display: flex;
-    gap: 64px;
 }
 
 .footer__nav-list{
