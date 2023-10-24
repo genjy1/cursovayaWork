@@ -7,6 +7,91 @@ import { createActualNews } from "./script/createActualNews.js";
 import { controlModal, createModal } from "./script/modal.js";
 import { register } from "./script/register.js";
 
+const date = new Date();
+const options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+}
+
+
+const articles = [
+  {
+    id:1,
+    image:'1.png',
+    articleName: 'Counter-Strike 2 is released',
+    articleGame: 'CS2',
+    gameIcon: './image/icon.png',
+    date: `${date.toLocaleString('en-US', options)}`,
+  },
+  {
+    id:2,
+    image:'1.png',
+    articleName: 'Counter-Strike 2 is released',
+    articleGame: 'CS2',
+    gameIcon: './image/icon.png',
+    date:`${date.toLocaleString('en-US', options)}`
+  },
+  {
+    id:3,
+    image:'1.png',
+    articleName: 'Counter-Strike 2 is released',
+    articleGame: 'CS2',
+    gameIcon: './image/icon.png',
+    date:`${date.toLocaleString('en-US', options)}`
+  },
+  {
+    id:4,
+    image:'1.png',
+    articleName: 'Counter-Strike 2 is released',
+    articleGame: 'CS2',
+    gameIcon: './image/icon.png',
+    date:`${date.toLocaleString('en-US', options)}`
+  },
+  {
+    id:5,
+    image:'1.png',
+    articleName: 'Counter-Strike 2 is released',
+    articleGame: 'CS2',
+    gameIcon: './image/icon.png',
+    date:`${date.toLocaleString('en-US', options)}`
+  },
+  {
+    id:6,
+    image:'1.png',
+    articleName: 'Counter-Strike 2 is released',
+    articleGame: 'CS2',
+    gameIcon: './image/icon.png',
+    date:`${date.toLocaleString('en-US', options)}`
+  },
+  {
+    id:7,
+    image:'1.png',
+    articleName: 'Counter-Strike 2 is released',
+    articleGame: 'CS2',
+    gameIcon: './image/icon.png',
+    date:`${date.toLocaleString('en-US', options)}`
+  },
+  {
+    id:8,
+    image:'1.png',
+    articleName: 'Counter-Strike 2 is released',
+    articleGame: 'CS2',
+    gameIcon: './image/icon.png',
+    date:`${date.toLocaleString('en-US', options)}`
+  },
+  {
+    id:9,
+    image:'1.png',
+    articleName: 'Counter-Strike 2 is released',
+    articleGame: 'CS2',
+    gameIcon: './image/icon.png',
+    date:`${date.toLocaleString('en-US', options)}`
+  },
+];
+
+const articlesWrapper = document.querySelector('.articles');
 const doc = window.document;
 const links = doc.querySelectorAll(".header-link"); // любой нужный селектор
 const linksCount = links.length;
@@ -38,44 +123,44 @@ if (currentURL.includes('stats.html')) {
 
 const adaptive = () => {
   const mobileHeader = document.createElement('header');
-  // window.addEventListener('resize', () => {
-  //   if (window.outerWidth < 426) {
-  //     console.log(window.outerWidth);
-  //     const mobileLogoLink = document.createElement('a');
-  //     const burgerMenu = document.createElement('span');
+  window.addEventListener('resize', () => {
+    if (window.outerWidth < 426) {
+      console.log(window.outerWidth);
+      const mobileLogoLink = document.createElement('a');
+      const burgerMenu = document.createElement('span');
   
   
-  //     burgerMenu.classList.add('burger');
-  //     burgerMenu.addEventListener('click', () => {
-  //       localStorage.setItem('burgerOpened',true);
-  //       mobileLogoLink.style.color = "white";
-  //       burgerMenu.style.backgroundColor = "white";
-  //       mobileHeader.style.backgroundColor = "white";
-  //       if (localStorage.getItem('burgerOpened')) {
-  //         mobileLogoLink.style.color = "#35006A";
-  //         burgerMenu.style.backgroundColor = "#35006A";
-  //         mobileHeader.style.backgroundColor = "transparent";
-  //         localStorage.removeItem('burgerOpened',false);
-  //       }
-  //     })
-  //     mobileLogoLink.classList.add('logo__link-mobile');
-  //     mobileLogoLink.classList.add('link');
-  //     mobileLogoLink.href = '/';
-  //     mobileLogoLink.textContent = 'E';
-  //     mobileHeader.append(mobileLogoLink, burgerMenu)
-  //     mobileHeader.classList.add('mobile__header');
-  //     mobileHeader.classList.add('container')
-  //     document.body.insertAdjacentElement('afterbegin', mobileHeader)
-  //   }else{
-  //     mobileHeader.innerHTML = "";
-  //     mobileLogoLink.style.color = "#35006A";
-  //     burgerMenu.style.backgroundColor = "#35006A";
-  //     mobileHeader.style.backgroundColor = "transparent";
-  //     mobileHeader.remove();
+      burgerMenu.classList.add('burger');
+      burgerMenu.addEventListener('click', () => {
+        localStorage.setItem('burgerOpened',true);
+        mobileLogoLink.style.color = "white";
+        burgerMenu.style.backgroundColor = "white";
+        mobileHeader.style.backgroundColor = "white";
+        if (localStorage.getItem('burgerOpened')) {
+          mobileLogoLink.style.color = "#35006A";
+          burgerMenu.style.backgroundColor = "#35006A";
+          mobileHeader.style.backgroundColor = "transparent";
+          localStorage.removeItem('burgerOpened',false);
+        }
+      })
+      mobileLogoLink.classList.add('logo__link-mobile');
+      mobileLogoLink.classList.add('link');
+      mobileLogoLink.href = '/';
+      mobileLogoLink.textContent = 'E';
+      mobileHeader.append(mobileLogoLink, burgerMenu)
+      mobileHeader.classList.add('mobile__header');
+      mobileHeader.classList.add('container')
+      document.body.insertAdjacentElement('afterbegin', mobileHeader)
+    }else{
+      mobileHeader.innerHTML = "";
+      mobileLogoLink.style.color = "#35006A";
+      burgerMenu.style.backgroundColor = "#35006A";
+      mobileHeader.style.backgroundColor = "transparent";
+      mobileHeader.remove();
 
-  //     console.log(window.outerWidth);
-  //   }
-  // })
+      console.log(window.outerWidth);
+    }
+  })
   // only for mobile devices
   if (window.outerWidth < 426) { 
     console.log(window.outerWidth);
@@ -115,12 +200,59 @@ const adaptive = () => {
   }
 }
 
+if(window.outerWidth < 426){
+  adaptive();
+}
 
 createModal();
 controlModal();
 createBanner();
 createFooter();
-adaptive()
+
+for (let i = 0; i < articles.length; i++) {
+  const articlesWrapper = document.querySelector('.articles__wrapper');
+  const articlePreviewContainer = document.createElement('a');
+  const previewImage = document.createElement('img');
+  const previewName = document.createElement('h2');
+  const gamePreviewWrapper = document.createElement('div');
+  const gameIcon = document.createElement('img');
+  const gameName = document.createElement('h3');
+  const dateWrapper = document.createElement('div');
+  const dateText = document.createElement('h4');
+
+  articlePreviewContainer.classList.add('articles__container');
+  articlePreviewContainer.classList.add('link');
+  previewImage.classList.add('articles-image');
+  previewName.classList.add('articles-name');
+  gamePreviewWrapper.classList.add('articles__game-container');
+  gameIcon.classList.add('game-icon');
+  gameName.classList.add('game-name');
+  dateWrapper.classList.add('date__wrapper');
+  dateText.classList.add('date-text')
+
+  articlePreviewContainer.append(previewImage, previewName,gamePreviewWrapper,dateWrapper);
+  gamePreviewWrapper.append(gameIcon, gameName);
+  dateWrapper.append(dateText);
+
+  articlePreviewContainer.dataset.id = articles[i].id;
+  articlePreviewContainer.href = `article.html?id=${articlePreviewContainer.dataset.id}`
+  previewImage.src = `./image/articles/${articles[i].image}`;
+  previewName.textContent = articles[i].articleName;
+  gameIcon.src = articles[i].gameIcon;
+  gameName.textContent = articles[i].articleGame;
+  dateText.textContent = articles[i].date;
+  articlesWrapper.prepend(articlePreviewContainer)
+}
+
+// for(let i = 0; i < articles.length; i++){
+//   createActualNews(articles[i])
+// }
+
+// articles.forEach (e => {
+//   articlesWrapper.prepend(e.id)
+//   articlesWrapper.style.color = 'white'
+// })
+
 
 if (currentURL.includes('register')) {
   const header = document.querySelector('.header');

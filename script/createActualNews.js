@@ -1,5 +1,8 @@
 'use strict'
 
-export const createActualNews = () => {
+export const createActualNews = (articles) => {
     console.log('actual news');
+
+
+    
 }
