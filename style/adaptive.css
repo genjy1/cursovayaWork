@@ -5,6 +5,10 @@
 }
 
 .mobile__header{
+    width: 425px;
+    padding: 0 23px;
+    background-color: #010101;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
