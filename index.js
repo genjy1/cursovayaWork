@@ -98,6 +98,46 @@ const linksCount = links.length;
 const currentURL = doc.URL;
 const item = doc.querySelectorAll('.list_item')
 const isMain = doc.querySelector('.main');
+const createMenu = (mobileHeader) => {
+  mobileHeader.remove();
+  const menu = document.createElement('menu');
+  const ul = document.createElement('ul');
+  const header = document.createElement('header');
+  const logoLinkBurger = document.createElement('a');
+  const burger = document.createElement('span');
+  const listItems = [document.createElement('li'), document.createElement('li'), document.createElement('li'), document.createElement('li'),document.createElement('li'),document.createElement('li')];
+  const burgerLinks = [document.createElement('a'), document.createElement('a'), document.createElement('a'), document.createElement('a'), document.createElement('a'), document.createElement('a')];
+  const headerLinks = document.querySelectorAll('.header-link');
+  const listItemsLinks = [{textContent:'Главная', href: './index.html'}, {textContent:'Статьи', href: './articles.html'}, {textContent:'Новости', href: './news.html'}, {textContent:'Турниры', href: './events.html'}, {textContent:'Статистика', href: './stats.html'}, {textContent:'Войти', href: './login.html'}]
+
+  menu.classList.add('burger-menu');
+  ul.classList.add('burger__nav-list');
+  ul.classList.add('nav-list');
+  header.classList.add('burger__header');
+  header.classList.add('container');
+  logoLinkBurger.classList.add('logo__link-burger');
+  logoLinkBurger.classList.add('link');
+  burger.classList.add('burger_menu');
+
+  logoLinkBurger.textContent = 'E';
+
+  for (let i = 0; i < listItems.length; i++) {
+    ul.append(listItems[i]);
+    listItems[i].classList.add('burger__list_item');
+    burgerLinks[i].classList.add('burger-link');
+    burgerLinks[i].classList.add('link');
+    burgerLinks[i].textContent = listItemsLinks[i].textContent;
+    burgerLinks[i].href = listItemsLinks[i].href;
+    listItems[i].append(burgerLinks[i]);
+  }
+  header.prepend(logoLinkBurger, burger)
+  ul.prepend(header)
+  menu.append(ul)
+
+  burger.addEventListener('click', () => {menu.remove(); document.body.insertAdjacentElement('afterbegin', mobileHeader)})
+
+  return menu
+}
 
 
 if (isMain === null) {
@@ -125,40 +165,40 @@ const adaptive = () => {
   const mobileHeader = document.createElement('header');
   window.addEventListener('resize', () => {
     if (window.outerWidth < 426) {
-      console.log(window.outerWidth);
-      const mobileLogoLink = document.createElement('a');
-      const burgerMenu = document.createElement('span');
+    //   console.log(window.outerWidth);
+    //   const mobileLogoLink = document.createElement('a');
+    //   const burgerMenu = document.createElement('span');
   
   
-      burgerMenu.classList.add('burger');
-      burgerMenu.addEventListener('click', () => {
-        localStorage.setItem('burgerOpened',true);
-        mobileLogoLink.style.color = "white";
-        burgerMenu.style.backgroundColor = "white";
-        mobileHeader.style.backgroundColor = "white";
-        if (localStorage.getItem('burgerOpened')) {
-          mobileLogoLink.style.color = "#35006A";
-          burgerMenu.style.backgroundColor = "#35006A";
-          mobileHeader.style.backgroundColor = "transparent";
-          localStorage.removeItem('burgerOpened',false);
-        }
-      })
-      mobileLogoLink.classList.add('logo__link-mobile');
-      mobileLogoLink.classList.add('link');
-      mobileLogoLink.href = '/';
-      mobileLogoLink.textContent = 'E';
-      mobileHeader.append(mobileLogoLink, burgerMenu)
-      mobileHeader.classList.add('mobile__header');
-      mobileHeader.classList.add('container')
-      document.body.insertAdjacentElement('afterbegin', mobileHeader)
-    }else{
-      mobileHeader.innerHTML = "";
-      mobileLogoLink.style.color = "#35006A";
-      burgerMenu.style.backgroundColor = "#35006A";
-      mobileHeader.style.backgroundColor = "transparent";
-      mobileHeader.remove();
+    //   burgerMenu.classList.add('burger');
+    //   burgerMenu.addEventListener('click', () => {
+    //     localStorage.setItem('burgerOpened',true);
+    //     mobileLogoLink.style.color = "white";
+    //     burgerMenu.style.backgroundColor = "white";
+    //     mobileHeader.style.backgroundColor = "white";
+    //     if (localStorage.getItem('burgerOpened')) {
+    //       mobileLogoLink.style.color = "#35006A";
+    //       burgerMenu.style.backgroundColor = "#35006A";
+    //       mobileHeader.style.backgroundColor = "transparent";
+    //       localStorage.removeItem('burgerOpened',false);
+    //     }
+    //   })
+    //   mobileLogoLink.classList.add('logo__link-mobile');
+    //   mobileLogoLink.classList.add('link');
+    //   mobileLogoLink.href = '/';
+    //   mobileLogoLink.textContent = 'E';
+    //   mobileHeader.append(mobileLogoLink, burgerMenu)
+    //   mobileHeader.classList.add('mobile__header');
+    //   mobileHeader.classList.add('container')
+    //   document.body.insertAdjacentElement('afterbegin', mobileHeader)
+    // }else{
+    //   mobileHeader.innerHTML = "";
+    //   mobileLogoLink.style.color = "#35006A";
+    //   burgerMenu.style.backgroundColor = "#35006A";
+    //   mobileHeader.style.backgroundColor = "transparent";
+    //   mobileHeader.remove();
 
-      console.log(window.outerWidth);
+    //   console.log(window.outerWidth);
     }
   })
   // only for mobile devices
@@ -169,18 +209,10 @@ const adaptive = () => {
 
 
     burgerMenu.classList.add('burger');
-    burgerMenu.addEventListener('click', () => {
-      localStorage.setItem('burgerOpened',true);
-      mobileLogoLink.style.color = "white";
-      burgerMenu.style.backgroundColor = "white";
-      mobileHeader.style.backgroundColor = "white";
-      if (localStorage.getItem('burgerOpened')) {
-        mobileLogoLink.style.color = "#35006A";
-        burgerMenu.style.backgroundColor = "#35006A";
-        mobileHeader.style.backgroundColor = "transparent";
-        localStorage.removeItem('burgerOpened',false);
-      }
-    })
+    burgerMenu.addEventListener('click', () => {document.body.insertAdjacentElement('afterbegin',createMenu(mobileHeader))});
+
+    // burgerMenu.addEventListener('click', createMenu())
+
     mobileLogoLink.classList.add('logo__link-mobile');
     mobileLogoLink.classList.add('link');
     mobileLogoLink.href = './index.html';
