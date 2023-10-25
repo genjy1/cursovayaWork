@@ -5,6 +5,8 @@
 }
 
 .mobile__header{
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -13,10 +15,8 @@
     width: 49px;
     height: 5px;
     background-color: #35006A;
-    position: absolute;
-    top:39px;
+    position: relative;
     border-radius:8px;
-    left: 357px;
 }
 
 .burger::before{
