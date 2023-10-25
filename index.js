@@ -118,6 +118,7 @@ const createMenu = (mobileHeader) => {
   logoLinkBurger.classList.add('logo__link-burger');
   logoLinkBurger.classList.add('link');
   burger.classList.add('burger_menu');
+  burger.classList.add('container')
 
   logoLinkBurger.textContent = 'E';
 
