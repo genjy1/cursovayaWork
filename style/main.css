@@ -282,6 +282,7 @@ body{
 
 .event-information_container{
     display: flex;
+    gap: 236px;
     color: var(--secondary-color);
     background: linear-gradient(179deg, rgba(102, 0, 204, 0.00) 17.14%, #60C 100%);
     padding: 0px 64px 16px;

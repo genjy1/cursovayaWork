@@ -1,11 +1,12 @@
 'use strict'
 import { createBanner } from "./script/genBanner.js";
 import { createFooter } from "./script/footer.js";
-import { createArticle } from "./script/news.js";
+import { renderArticle } from "./script/createArticle.js";
 import { createStatsRow } from "./script/createStatsRow.js";
-import { createActualNews } from "./script/createActualNews.js";
 import { controlModal, createModal } from "./script/modal.js";
 import { register } from "./script/register.js";
+import { renderNews,  } from "./script/createNews.js";
+import { getData } from "./script/getData.js";
 
 const date = new Date();
 const options = {
@@ -242,41 +243,6 @@ controlModal();
 createBanner();
 createFooter();
 
-for (let i = 0; i < articles.length; i++) {
-  const articlesWrapper = document.querySelector('.articles__wrapper');
-  const articlePreviewContainer = document.createElement('a');
-  const previewImage = document.createElement('img');
-  const previewName = document.createElement('h2');
-  const gamePreviewWrapper = document.createElement('div');
-  const gameIcon = document.createElement('img');
-  const gameName = document.createElement('h3');
-  const dateWrapper = document.createElement('div');
-  const dateText = document.createElement('h4');
-
-  articlePreviewContainer.classList.add('articles__container');
-  articlePreviewContainer.classList.add('link');
-  previewImage.classList.add('articles-image');
-  previewName.classList.add('articles-name');
-  gamePreviewWrapper.classList.add('articles__game-container');
-  gameIcon.classList.add('game-icon');
-  gameName.classList.add('game-name');
-  dateWrapper.classList.add('date__wrapper');
-  dateText.classList.add('date-text')
-
-  articlePreviewContainer.append(previewImage, previewName,gamePreviewWrapper,dateWrapper);
-  gamePreviewWrapper.append(gameIcon, gameName);
-  dateWrapper.append(dateText);
-
-  articlePreviewContainer.dataset.id = articles[i].id;
-  articlePreviewContainer.href = `article.html?id=${articlePreviewContainer.dataset.id}`
-  previewImage.src = `./image/articles/${articles[i].image}`;
-  previewName.textContent = articles[i].articleName;
-  gameIcon.src = articles[i].gameIcon;
-  gameName.textContent = articles[i].articleGame;
-  dateText.textContent = articles[i].date;
-  articlesWrapper.prepend(articlePreviewContainer)
-}
-
 // for(let i = 0; i < articles.length; i++){
 //   createActualNews(articles[i])
 // }
@@ -285,8 +251,6 @@ for (let i = 0; i < articles.length; i++) {
 //   articlesWrapper.prepend(e.id)
 //   articlesWrapper.style.color = 'white'
 // })
-
-
 if (currentURL.includes('register')) {
   const header = document.querySelector('.header');
   header.insertAdjacentText('afterend', " ")
@@ -294,17 +258,56 @@ if (currentURL.includes('register')) {
   register()
 }
 
-if (currentURL.includes('news')) {
-  console.log(currentURL.includes('news'));
+if (currentURL.includes('articles')) {
+  const data = await getData('articles')
+  renderArticle(data)
+}
 
-  createArticle()
+if (currentURL.includes('news.html')) {
+  const data = await getData('news');
+
+  renderNews(data)
 }
 
 if (!currentURL.includes('index')) {
   const header = document.querySelector('.header');
   header.insertAdjacentHTML('afterend', createBanner())
-  console.log('1');
 }else{
   const main = document.querySelector('main')
   main.insertAdjacentHTML('beforebegin', createBanner())
+  
+  for (let i = 0; i < articles.length; i++) {
+    const articlesWrapper = document.querySelector('.articles__wrapper');
+    const articlePreviewContainer = document.createElement('a');
+    const previewImage = document.createElement('img');
+    const previewName = document.createElement('h2');
+    const gamePreviewWrapper = document.createElement('div');
+    const gameIcon = document.createElement('img');
+    const gameName = document.createElement('h3');
+    const dateWrapper = document.createElement('div');
+    const dateText = document.createElement('h4');
+  
+    articlePreviewContainer.classList.add('articles__container');
+    articlePreviewContainer.classList.add('link');
+    previewImage.classList.add('articles-image');
+    previewName.classList.add('articles-name');
+    gamePreviewWrapper.classList.add('articles__game-container');
+    gameIcon.classList.add('game-icon');
+    gameName.classList.add('game-name');
+    dateWrapper.classList.add('date__wrapper');
+    dateText.classList.add('date-text')
+  
+    articlePreviewContainer.append(previewImage, previewName,gamePreviewWrapper,dateWrapper);
+    gamePreviewWrapper.append(gameIcon, gameName);
+    dateWrapper.append(dateText);
+  
+    articlePreviewContainer.dataset.id = articles[i].id;
+    articlePreviewContainer.href = `article.html?id=${articlePreviewContainer.dataset.id}`
+    previewImage.src = `./image/articles/${articles[i].image}`;
+    previewName.textContent = articles[i].articleName;
+    gameIcon.src = articles[i].gameIcon;
+    gameName.textContent = articles[i].articleGame;
+    dateText.textContent = articles[i].date;
+    articlesWrapper.prepend(articlePreviewContainer)
+  }
 }
