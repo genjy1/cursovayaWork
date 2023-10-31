@@ -5,11 +5,10 @@
 }
 
 .mobile__header{
-    left: 23px;
     background-color: #010101;
-    position: fixed;
     display: flex;
     align-items: center;
+    /* gap: 295px; */
     justify-content: space-between;
 }
 
@@ -18,28 +17,10 @@
     width: 49px;
     height: 5px;
     background-color: #35006A;
-    position: relative;
     border-radius:8px;
 }
 
-.burger::before{
-    content: '';
-    display: block;
-    width: 49px;
-    height: 5px;
-    background-color: #35006A;
-    position: relative;
-    bottom: -18px;
-    border-radius:8px;
+.burger:not(:last-child){
+    margin: 0 0 8px;
 }
 
-.burger::after{
-    content: '';
-    display: block;
-    width: 49px;
-    height: 5px;
-    background-color: #35006A;
-    position: relative;
-    top:-22px;
-    border-radius:8px;
-}

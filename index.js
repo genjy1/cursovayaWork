@@ -17,80 +17,80 @@ const options = {
 }
 
 
-const articles = [
-  {
-    id:1,
-    image:'1.png',
-    articleName: 'Counter-Strike 2 is released',
-    articleGame: 'CS2',
-    gameIcon: './image/icon.png',
-    date: `${date.toLocaleString('en-US', options)}`,
-  },
-  {
-    id:2,
-    image:'1.png',
-    articleName: 'Counter-Strike 2 is released',
-    articleGame: 'CS2',
-    gameIcon: './image/icon.png',
-    date:`${date.toLocaleString('en-US', options)}`
-  },
-  {
-    id:3,
-    image:'1.png',
-    articleName: 'Counter-Strike 2 is released',
-    articleGame: 'CS2',
-    gameIcon: './image/icon.png',
-    date:`${date.toLocaleString('en-US', options)}`
-  },
-  {
-    id:4,
-    image:'1.png',
-    articleName: 'Counter-Strike 2 is released',
-    articleGame: 'CS2',
-    gameIcon: './image/icon.png',
-    date:`${date.toLocaleString('en-US', options)}`
-  },
-  {
-    id:5,
-    image:'1.png',
-    articleName: 'Counter-Strike 2 is released',
-    articleGame: 'CS2',
-    gameIcon: './image/icon.png',
-    date:`${date.toLocaleString('en-US', options)}`
-  },
-  {
-    id:6,
-    image:'1.png',
-    articleName: 'Counter-Strike 2 is released',
-    articleGame: 'CS2',
-    gameIcon: './image/icon.png',
-    date:`${date.toLocaleString('en-US', options)}`
-  },
-  {
-    id:7,
-    image:'1.png',
-    articleName: 'Counter-Strike 2 is released',
-    articleGame: 'CS2',
-    gameIcon: './image/icon.png',
-    date:`${date.toLocaleString('en-US', options)}`
-  },
-  {
-    id:8,
-    image:'1.png',
-    articleName: 'Counter-Strike 2 is released',
-    articleGame: 'CS2',
-    gameIcon: './image/icon.png',
-    date:`${date.toLocaleString('en-US', options)}`
-  },
-  {
-    id:9,
-    image:'1.png',
-    articleName: 'Counter-Strike 2 is released',
-    articleGame: 'CS2',
-    gameIcon: './image/icon.png',
-    date:`${date.toLocaleString('en-US', options)}`
-  },
-];
+// const articles = [
+//   {
+//     id:1,
+//     image:'1.png',
+//     articleName: 'Counter-Strike 2 is released',
+//     articleGame: 'CS2',
+//     gameIcon: './image/icon.png',
+//     date: `${date.toLocaleString('en-US', options)}`,
+//   },
+//   {
+//     id:2,
+//     image:'1.png',
+//     articleName: 'Counter-Strike 2 is released',
+//     articleGame: 'CS2',
+//     gameIcon: './image/icon.png',
+//     date:`${date.toLocaleString('en-US', options)}`
+//   },
+//   {
+//     id:3,
+//     image:'1.png',
+//     articleName: 'Counter-Strike 2 is released',
+//     articleGame: 'CS2',
+//     gameIcon: './image/icon.png',
+//     date:`${date.toLocaleString('en-US', options)}`
+//   },
+//   {
+//     id:4,
+//     image:'1.png',
+//     articleName: 'Counter-Strike 2 is released',
+//     articleGame: 'CS2',
+//     gameIcon: './image/icon.png',
+//     date:`${date.toLocaleString('en-US', options)}`
+//   },
+//   {
+//     id:5,
+//     image:'1.png',
+//     articleName: 'Counter-Strike 2 is released',
+//     articleGame: 'CS2',
+//     gameIcon: './image/icon.png',
+//     date:`${date.toLocaleString('en-US', options)}`
+//   },
+//   {
+//     id:6,
+//     image:'1.png',
+//     articleName: 'Counter-Strike 2 is released',
+//     articleGame: 'CS2',
+//     gameIcon: './image/icon.png',
+//     date:`${date.toLocaleString('en-US', options)}`
+//   },
+//   {
+//     id:7,
+//     image:'1.png',
+//     articleName: 'Counter-Strike 2 is released',
+//     articleGame: 'CS2',
+//     gameIcon: './image/icon.png',
+//     date:`${date.toLocaleString('en-US', options)}`
+//   },
+//   {
+//     id:8,
+//     image:'1.png',
+//     articleName: 'Counter-Strike 2 is released',
+//     articleGame: 'CS2',
+//     gameIcon: './image/icon.png',
+//     date:`${date.toLocaleString('en-US', options)}`
+//   },
+//   {
+//     id:9,
+//     image:'1.png',
+//     articleName: 'Counter-Strike 2 is released',
+//     articleGame: 'CS2',
+//     gameIcon: './image/icon.png',
+//     date:`${date.toLocaleString('en-US', options)}`
+//   },
+// ];
 
 const articlesWrapper = document.querySelector('.articles');
 const doc = window.document;
@@ -207,27 +207,24 @@ const adaptive = () => {
   if (window.outerWidth < 426) { 
     console.log(window.outerWidth);
     const mobileLogoLink = document.createElement('a');
-    const burgerMenu = document.createElement('span');
+    const burgerWrapper = document.createElement('div')
+    const burgerMenu = [document.createElement('span'), document.createElement('span'), document.createElement('span')];
 
-
-    burgerMenu.classList.add('burger');
-    burgerMenu.addEventListener('click', () => {document.body.insertAdjacentElement('afterbegin',createMenu(mobileHeader))});
+    burgerWrapper.classList.add('burger__wrapper')
+    burgerMenu.forEach(e => e.classList.add('burger'));
+    burgerWrapper.addEventListener('click', () => {document.body.insertAdjacentElement('afterbegin',createMenu(mobileHeader))});
 
     // burgerMenu.addEventListener('click', createMenu())
-
+    burgerMenu.forEach(e => burgerWrapper.append(e))
     mobileLogoLink.classList.add('logo__link-mobile');
     mobileLogoLink.classList.add('link');
     mobileLogoLink.href = './index.html';
     mobileLogoLink.textContent = 'E';
-    mobileHeader.append(mobileLogoLink, burgerMenu)
+    mobileHeader.append(mobileLogoLink, burgerWrapper)
     mobileHeader.classList.add('mobile__header');
     mobileHeader.classList.add('container')
     document.body.insertAdjacentElement('afterbegin', mobileHeader)
   }else{
-    mobileHeader.innerHTML = "";
-    mobileLogoLink.style.color = "#35006A";
-    burgerMenu.style.backgroundColor = "#35006A";
-    mobileHeader.style.backgroundColor = "transparent";
     mobileHeader.remove();
 
     console.log(window.outerWidth);
