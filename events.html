@@ -13,8 +13,21 @@
         <div class="header__wrapper container"><div class="logo__wrapper"><a href="./index.html"><img src="./image/logo.svg" alt="ESNHub Logo" class="logo-img"></a></div><nav class="nav"><ul class="header__nav-list nav-list"><li class="list_item"><a href="./news.html" class="header-link link">Новости</a></li><li class="list_item"><a href="./articles.html" class="header-link link">Статьи</a></li><li class="list_item"><a href="./events.html" class="header-link link">Турниры</a></li><li class="list_item"><a href="./stats.html" class="header-link link">Статистика</a></li></ul></nav><div class="header__login"><button class="login-btn">Войти</button></div</div>
     </header>
     <main class="main container">
+        <form class="events-filter">
+            <input type="button" value="Сегодняшние" class="filter-btn" name="ongoing">
+            <input type="button" value="Будущие" class="filter-btn" name="featured">
+            <input type="button" value="Все" class="filter-btn" name="all">
+        </form>
         <table class="events__table">
-            <tbody></tbody>
+            <thead class="events__thead">
+                <th class="events__th">Tier</th>
+                <th class="events__th">Организатор</th>
+                <th class="events__th">Турнир</th>
+                <th class="events__th">Дата</th>
+                <th class="events__th">Призовой фонд</th>
+                <th class="events__th">Количество игроков</th>
+            </thead>
+            <tbody class="events__body"></tbody>
         </table>
         <table class="mobile__table">
             <tbody></tbody>

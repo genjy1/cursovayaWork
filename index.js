@@ -7,6 +7,7 @@ import { controlModal, createModal } from "./script/modal.js";
 import { register } from "./script/register.js";
 import { renderNews,  } from "./script/createNews.js";
 import { getData } from "./script/getData.js";
+import { renderEvent, events } from "./script/events.js";
 
 const date = new Date();
 const options = {
@@ -163,6 +164,10 @@ if (currentURL.includes('stats.html')) {
   createStatsRow()
 }
 
+if (currentURL.includes('events.html')) {
+  renderEvent(events)
+}
+
 const adaptive = () => {
   const mobileHeader = document.createElement('header');
   window.addEventListener('resize', () => {
@@ -240,14 +245,6 @@ controlModal();
 createBanner();
 createFooter();
 
-// for(let i = 0; i < articles.length; i++){
-//   createActualNews(articles[i])
-// }
-
-// articles.forEach (e => {
-//   articlesWrapper.prepend(e.id)
-//   articlesWrapper.style.color = 'white'
-// })
 if (currentURL.includes('register')) {
   const header = document.querySelector('.header');
   header.insertAdjacentText('afterend', " ")
