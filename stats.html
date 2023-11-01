@@ -13,14 +13,17 @@
         <div class="header__wrapper container"><div class="logo__wrapper"><a href="./index.html"><img src="./image/logo.svg" alt="ESNHub Logo" class="logo-img"></a></div><nav class="nav"><ul class="header__nav-list nav-list"><li class="list_item"><a href="./news.html" class="header-link link">Новости</a></li><li class="list_item"><a href="./articles.html" class="header-link link">Статьи</a></li><li class="list_item"><a href="./events.html" class="header-link link">Турниры</a></li><li class="list_item"><a href="./stats.html" class="header-link link">Статистика</a></li></ul></nav><div class="header__login"><button class="login-btn">Войти</button></div</div>
     </header>
     <main class="main container">
-        <table class="stats__table players">
-            <thead><th class="stats__th">Топ игроков</th></thead>
-            <tbody class="players__body"></tbody>
-        </table>
-        <table class="stats__table">
-            <thead><th class="stats__th">Топ команд</th></thead>
-            <tbody class="teams__body"></tbody>
-        </table>
-    </main>
+        <div class="tables__wrapper">
+            <table class="stats__table players">
+                <thead><th class="stats__th">Топ игроков</th></thead>
+                <tbody class="players__body stats__body"></tbody>
+            </table>
+            <table class="stats__table teams">
+                <thead><th class="stats__th">Топ команд</th></thead>
+                <tbody class="teams__body stats__body"></tbody>
+            </table>
+        </main>
+        </div>
 </body>
+<script src="./script/stats.js"></script>
 </html>

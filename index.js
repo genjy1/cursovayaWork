@@ -2,7 +2,6 @@
 import { createBanner } from "./script/genBanner.js";
 import { createFooter } from "./script/footer.js";
 import { renderArticle } from "./script/createArticle.js";
-import { createStatsRow } from "./script/createStatsRow.js";
 import { controlModal, createModal } from "./script/modal.js";
 import { register } from "./script/register.js";
 import { renderNews,  } from "./script/createNews.js";
@@ -160,10 +159,6 @@ for (let i = 0; i < linksCount; i++) {
 }
 }
 
-if (currentURL.includes('stats.html')) {
-  createStatsRow()
-}
-
 if (currentURL.includes('events.html')) {
   renderEvent(events)
 }
@@ -268,9 +263,10 @@ if (!currentURL.includes('index')) {
   header.insertAdjacentHTML('afterend', createBanner())
 }else{
   const main = document.querySelector('main')
+  const articles = await getData('articles')
   main.insertAdjacentHTML('beforebegin', createBanner())
   
-  for (let i = 0; i < articles.length; i++) {
+  articles.map(article => {
     const articlesWrapper = document.querySelector('.articles__wrapper');
     const articlePreviewContainer = document.createElement('a');
     const previewImage = document.createElement('img');
@@ -295,13 +291,16 @@ if (!currentURL.includes('index')) {
     gamePreviewWrapper.append(gameIcon, gameName);
     dateWrapper.append(dateText);
   
-    articlePreviewContainer.dataset.id = articles[i].id;
+    articlePreviewContainer.dataset.id = article.id;
     articlePreviewContainer.href = `article.html?id=${articlePreviewContainer.dataset.id}`
-    previewImage.src = `./image/articles/${articles[i].image}`;
-    previewName.textContent = articles[i].articleName;
-    gameIcon.src = articles[i].gameIcon;
-    gameName.textContent = articles[i].articleGame;
-    dateText.textContent = articles[i].date;
+    previewImage.src = `${article.img}`;
+    previewName.textContent = article.name;
+    gameIcon.src = article.gameIcon;
+    gameName.textContent = article.game;
+    dateText.textContent = article.date;
     articlesWrapper.prepend(articlePreviewContainer)
-  }
+  })
+  
+    
+
 }
