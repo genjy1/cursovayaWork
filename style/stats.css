@@ -1,0 +1,11 @@
+@import url('../index.css');
+
+.stats__th{
+    color: var(--secondary-color);
+    font-family: 'Benzin Bold';
+    font-size: 32px;
+}
+
+.main{
+    display: flex;
+}
