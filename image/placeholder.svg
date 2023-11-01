@@ -1,0 +1,15 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="profile-icon">
+<rect id="Rectangle 25" x="2" y="2" width="176" height="176" rx="88" fill="url(#paint0_linear_95_306)" stroke="#6600CC" stroke-width="4"/>
+<g id="Group 57">
+<circle id="Ellipse 3" cx="89.7" cy="73.5" r="17.7" fill="#7500EB"/>
+<path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M57 114.968H121.8C117.473 101.192 104.604 91.2 89.4 91.2C74.1964 91.2 61.3267 101.192 57 114.968ZM123.354 125.062V137.907C123.354 137.877 123.354 137.846 123.354 137.815V125.154C123.354 125.124 123.354 125.093 123.354 125.062ZM89.4398 171.77H89.3601C89.3734 171.77 89.3867 171.77 89.4 171.77C89.4133 171.77 89.4266 171.77 89.4398 171.77Z" fill="#7500EB"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_95_306" x1="4.2" y1="180" x2="228.9" y2="-43.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF8C00"/>
+<stop offset="1" stop-color="#6600CC"/>
+</linearGradient>
+</defs>
+</svg>

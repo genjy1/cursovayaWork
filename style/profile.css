@@ -1,0 +1,6 @@
+@import url(../index.css);
+
+.refactor-profile{
+    display: grid;
+    grid-template-columns: 2fr, 310px;
+}
