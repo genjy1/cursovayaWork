@@ -1,5 +1,17 @@
 @import url('../index.css');
 
+@media screen and (min-width:426px) {
+    .stats__row{
+        justify-content: space-between;
+        max-width: 582px;
+        gap: 40px;
+    }
+
+    .td:nth-child(4){
+        padding-right: 69px;
+    }
+}
+
 .stats__th{
     color: var(--secondary-color);
     font-family: 'Benzin Bold';
@@ -16,12 +28,9 @@
 }
 
 .stats__row{
-    justify-content: space-between;
     align-items: center;
-    max-width: 582px;
     display: flex;
     background-color: #5C3881;
-    gap: 40px;
 }
 
 .td{
@@ -51,10 +60,6 @@
 .stats__img{
     width: 90px;
     height: 82px;
-}
-
-.td:nth-child(4){
-    padding-right: 69px;
 }
 
 .tables__wrapper{

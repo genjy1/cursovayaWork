@@ -3,8 +3,37 @@
 
 @media screen and (max-width:425px) {
 
+    .player__img{
+        margin-right: 13px;
+    }
+
+    .player-stats:not(:last-child){
+        margin-right: 28px;
+    }
+
+    .team__img{
+        margin-right: 13px;
+    }
+
+    .team-stats:not(:last-child){
+        margin-right: 28px;
+    }
+
     .header{
         display: none;
+    }
+
+    .tables__wrapper{
+        flex-direction: column;
+    }
+
+    .stats__container{
+        display: flex;
+        gap: 28px;
+    }
+
+    .stats__row{
+        width: 389px;
     }
 
     .banner{
@@ -12,7 +41,6 @@
     }
 
     .event{
-        margin: 120px 0 0;
         width: 380px;
         background-position: 50%;
         background-size: contain;
@@ -265,7 +293,7 @@ body{
 
 .event{
     background-repeat: no-repeat;
-        background-image: url('https://img-cdn.hltv.org/eventbanner/N0-VIPSOfPzDcD5LutQIjd.png?ixlib=java-2.1.0&w=1276&s=fd54ae002769c88c3196e6b28162fd88');
+    background-image: url('https://img-cdn.hltv.org/eventbanner/N0-VIPSOfPzDcD5LutQIjd.png?ixlib=java-2.1.0&w=1276&s=fd54ae002769c88c3196e6b28162fd88');
 }
 
 .header__nav-list{
@@ -373,11 +401,13 @@ body{
     color: white;
     font-size: 16px;
     font-weight: 400;
+    text-align: left;
+    position: relative;
+    left: 10px;
 }
 
 .input:hover{
-    background: linear-gradient(90deg, #FF8C00 0%, #60C 100%) no-repeat;
-    animation: bghover ease-out 2s;
+    border-color: #6600CC ;
 }
 
 .burger-link{

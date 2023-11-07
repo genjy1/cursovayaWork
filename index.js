@@ -8,14 +8,6 @@ import { renderNews,  } from "./script/createNews.js";
 import { getData } from "./script/getData.js";
 import { renderEvent, events } from "./script/events.js";
 
-const date = new Date();
-const options = {
-  weekday: "long",
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-}
-
 const articlesWrapper = document.querySelector('.articles');
 const doc = window.document;
 const links = doc.querySelectorAll(".header-link"); // любой нужный селектор

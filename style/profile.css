@@ -1,6 +1,65 @@
 @import url(../index.css);
 
-.refactor-profile{
+.author-form{
+    color: #fff;
+}
+
+.profile__changer{
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    gap: 58px;
+}
+
+.settings{
+    margin-bottom: 26px;
+}
+
+.settings__container{
+    margin-bottom: 37px;
+}
+
+.settings-input{
+    margin-top: 19px;
+    width: 100%;
+}
+
+.setting-name{
+    color: #fff;
+    font-family: 'Benzin Bold';
+    margin-bottom: 32px;
+}
+
+.profile__inputs{
     display: grid;
-    grid-template-columns: 2fr, 310px;
+    grid-template-columns:repeat(2, 333px);
+    gap: 24px 40px;
+}
+
+.author__container{
+    max-width: 900px;
+}
+
+.settings__fieldset{
+    border: 0px solid transparent;
+    margin-bottom: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.author-submit{
+    width: 100%;
+}
+
+.radio-label{
+    display: block;
+    border: 4px solid #6600CC;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.radio-label > .checkbox{
+    display: none;
 }

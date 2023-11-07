@@ -12,25 +12,49 @@
         <div class="header__wrapper container"><div class="logo__wrapper"><a href="./index.html"><img src="./image/logo.svg" alt="ESNHub Logo" class="logo-img"></a></div><nav class="nav"><ul class="header__nav-list nav-list"><li class="list_item"><a href="./news.html" class="header-link link">Новости</a></li><li class="list_item"><a href="./articles.html" class="header-link link">Статьи</a></li><li class="list_item"><a href="./events.html" class="header-link link">Турниры</a></li><li class="list_item"><a href="./stats.html" class="header-link link">Статистика</a></li></ul></nav><div class="header__login"><button class="login-btn">Войти</button></div></div>
     </header>
     <main class="main container">
-        <div class="settings__container">
-            <h2 class="setting-name">Изменение данных профиля</h2>
-            <div class="setting-profile"><img src="./image/placeholder.svg" alt="" class="profile-img"></div>
-            <form action="" class="refactor-profile">
-                <input type="password" name="password" id="" class="input" placeholder="Введите новый пароль"><input type="password" name="repeatPassword" id="" class="input" placeholder="Повторите пароль">
-                <input type="email" name="email" id="" class="input" placeholder="Введите новый email"><input type="email" name="repeatEmail" id="" class="input" placeholder="Повторите email">
-                <input type="submit" value="Отправить" class="input">
-            </form>
-        </div>
-        <div class="settings__container">
-            <h2 class="setting-name">Изменение часового пояса</h2>
-        </div>
-        <div class="settings__container">
-            <h2 class="setting-name">Изменение темы сайта</h2>
-        </div>
-        <div class="settings__container">
-            <h2 class="setting-name">Хотите стать автором?</h2>
+        <div class="settings">
+            <div class="settings__container">
+                <h2 class="setting-name">Изменение данных профиля</h2>
+                <div class="setting__wrapper profile__changer">
+                <div class="setting-profile"><img src="./image/placeholder.svg" alt="" class="profile-img"></div>
+                <form class="refactor-profile">
+                    <div class="profile__inputs">
+                        <input type="password" name="password" id="" class="input" placeholder="Введите новый пароль"><input type="password" name="repeatPassword" id="" class="input" placeholder="Повторите пароль">
+                        <input type="email" name="email" id="" class="input" placeholder="Введите новый email"><input type="email" name="repeatEmail" id="" class="input" placeholder="Повторите email">
+                    </div>
+                    <input type="submit" value="Отправить" class="input settings-input">
+                </form>
+                </div>
+            </div>
+            <div class="settings__container">
+                <h2 class="setting-name">Изменение часового пояса</h2>
+                <div class="setting__wrapper timezone-changer">
+                    <form action="" class="timezone__form">
+
+                    </form>
+                </div>
+            </div>
+            <div class="settings__container">
+                <h2 class="setting-name">Изменение темы сайта</h2>
+            </div>
+            <div class="settings__container author__container">
+                <h2 class="setting-name">Хотите стать автором?</h2>
+                <form action="" class="author-form">
+                    <fieldset class="settings__fieldset">
+                        <label class="form-label">Выберите</label>
+                        <label for="checkboxTrue" class="radio-label">Да
+                            <input type="radio" name="Yes" id="checkboxTrue" class="checkbox">
+                        </label>
+                        <label for="checkboxFalse" class="radio-label">Нет
+                            <input type="radio" name="No" id="checkboxFalse" class="checkbox">
+                        </label>
+                    </fieldset>
+                    <input type="submit" value="Отправить" class="input author-submit">
+                </form>
+            </div>
         </div>
     </main>
 </body>
 <script src="./index.js" type="module"></script> 
+<script src="./script/profile.js"></script>
 </html>

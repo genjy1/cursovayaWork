@@ -17,16 +17,16 @@ const createStatsPlayer = (player) => `
     <td class="player__td player__img td" style="background-image:url('./image/teams/${player.team}.png')">
         <img class="player-img stats__img" src="./image/players/${player.nickname}.png">
     </td>
-    <td class="player__td td">${player.nickname}</td>
-    <td class="player__td td">${player.rating} Рейтинг</td>
-    <td class="player__td td">${player.maps}</td>
+    <td class="player__td player-stats td">${player.nickname}</td>
+    <td class="player__td player-stats td">${player.rating} Рейтинг</td>
+    <td class="player__td player-stats td">${player.maps}</td>
 `
 
 const createStatsTeams = (team) => `
     <td class="team__td td team__img"><img src="./image/teams/${team.img + '.png' }" class="team-img stats__img"></td>
-    <td class="team__td td">${team.name}</td>
-    <td class="team__td td">${team.rating} Рейтинг</td>
-    <td class="team__td td">${team.maps}</td>
+    <td class="team__td team-stats td">${team.name}</td>
+    <td class="team__td team-stats td">${team.rating} Рейтинг</td>
+    <td class="team__td team-stats td">${team.maps}</td>
 `
 
 const createRowsPlayer = (data) => 
