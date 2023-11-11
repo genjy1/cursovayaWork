@@ -4,7 +4,7 @@ import { getData } from "./getData.js"
 
 export const renderArticlePage = async() => {
     const title = document.querySelector('title')
-    const id = location.href.slice(39);
+    const id = location.href.slice(38);
     const main = document.querySelector('.main');
     // const titleHeader = document.createElement('header');
     const article = await getData(`articles/${id}`);
@@ -28,6 +28,8 @@ export const renderArticlePage = async() => {
     articleAuthor.textContent = article.author;
     articleTitle.textContent = article.name;
     articlesWrapper.append(articleTitle, articleAuthor,articleImage, articleText);
-    main.append(articlesWrapper)
+    main.append(articlesWrapper);
+
+    console.log(id);
 }
 renderArticlePage()
