@@ -4,7 +4,7 @@ import { getData } from "./getData.js"
 
 export const renderArticlePage = async() => {
     const title = document.querySelector('title')
-    const id = location.href.slice(39);
+    const id = location.href.slice(55);
     const main = document.querySelector('.main');
     // const titleHeader = document.createElement('header');
     const article = await getData(`articles/${id}`);
