@@ -7,6 +7,7 @@ import { register } from "./script/register.js";
 import { renderNews,  } from "./script/createNews.js";
 import { getData } from "./script/getData.js";
 import { renderEvent, events } from "./script/events.js";
+import { setOnGoingEvent } from "./script/ongoingEvent.js";
 
 const articlesWrapper = document.querySelector('.articles');
 const doc = window.document;
@@ -31,11 +32,9 @@ const createMenu = (mobileHeader) => {
   ul.classList.add('burger__nav-list');
   ul.classList.add('nav-list');
   header.classList.add('burger__header');
-  header.classList.add('container');
   logoLinkBurger.classList.add('logo__link-burger');
   logoLinkBurger.classList.add('link');
   burger.classList.add('burger_menu');
-  burger.classList.add('container')
 
   logoLinkBurger.textContent = 'E';
 
@@ -52,7 +51,8 @@ const createMenu = (mobileHeader) => {
   ul.prepend(header)
   menu.append(ul)
 
-  burger.addEventListener('click', () => {menu.remove(); document.body.insertAdjacentElement('afterbegin', mobileHeader)})
+  burger.addEventListener('click', () => {menu.remove(); document.body.insertAdjacentElement('afterbegin', mobileHeader); document.body.style.overflow = 'visible'});
+  document.body.style.overflow = 'hidden'
 
   return menu
 }
@@ -81,47 +81,8 @@ if (currentURL.includes('events.html')) {
 
 const adaptive = () => {
   const mobileHeader = document.createElement('header');
-  window.addEventListener('resize', () => {
-    if (window.outerWidth < 426) {
-    //   console.log(window.outerWidth);
-    //   const mobileLogoLink = document.createElement('a');
-    //   const burgerMenu = document.createElement('span');
-  
-  
-    //   burgerMenu.classList.add('burger');
-    //   burgerMenu.addEventListener('click', () => {
-    //     localStorage.setItem('burgerOpened',true);
-    //     mobileLogoLink.style.color = "white";
-    //     burgerMenu.style.backgroundColor = "white";
-    //     mobileHeader.style.backgroundColor = "white";
-    //     if (localStorage.getItem('burgerOpened')) {
-    //       mobileLogoLink.style.color = "#35006A";
-    //       burgerMenu.style.backgroundColor = "#35006A";
-    //       mobileHeader.style.backgroundColor = "transparent";
-    //       localStorage.removeItem('burgerOpened',false);
-    //     }
-    //   })
-    //   mobileLogoLink.classList.add('logo__link-mobile');
-    //   mobileLogoLink.classList.add('link');
-    //   mobileLogoLink.href = '/';
-    //   mobileLogoLink.textContent = 'E';
-    //   mobileHeader.append(mobileLogoLink, burgerMenu)
-    //   mobileHeader.classList.add('mobile__header');
-    //   mobileHeader.classList.add('container')
-    //   document.body.insertAdjacentElement('afterbegin', mobileHeader)
-    // }else{
-    //   mobileHeader.innerHTML = "";
-    //   mobileLogoLink.style.color = "#35006A";
-    //   burgerMenu.style.backgroundColor = "#35006A";
-    //   mobileHeader.style.backgroundColor = "transparent";
-    //   mobileHeader.remove();
-
-    //   console.log(window.outerWidth);
-    }
-  })
   // only for mobile devices
   if (window.outerWidth < 426) { 
-    console.log(window.outerWidth);
     const mobileLogoLink = document.createElement('a');
     const burgerWrapper = document.createElement('div')
     const burgerMenu = [document.createElement('span'), document.createElement('span'), document.createElement('span')];
@@ -142,8 +103,6 @@ const adaptive = () => {
     document.body.insertAdjacentElement('afterbegin', mobileHeader)
   }else{
     mobileHeader.remove();
-
-    console.log(window.outerWidth);
   }
 }
 
@@ -155,7 +114,6 @@ createModal();
 controlModal();
 createBanner();
 createFooter();
-
 if (currentURL.includes('register')) {
   const header = document.querySelector('.header');
   header.insertAdjacentText('afterend', " ")
@@ -166,6 +124,10 @@ if (currentURL.includes('register')) {
 if (currentURL.includes('articles')) {
   const data = await getData('articles')
   renderArticle(data)
+}
+
+if (currentURL.includes('index')) {
+  setOnGoingEvent();
 }
 
 if (currentURL.includes('news.html')) {

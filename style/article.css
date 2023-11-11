@@ -1,0 +1,46 @@
+@media screen and (max-width:425px) {
+    .article-image{
+        max-width: 380px;
+    }
+}
+
+@media screen and (min-width:426px) {
+    .article-text{
+        margin-top: 32px;
+    }
+}
+
+body{
+    color: #fff;
+}
+
+.article__wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.article-title::first-letter{
+    text-transform: capitalize;
+}
+
+.article-title{
+    color: #FF8C00;
+    margin-bottom: 8px;
+    font-family: 'Benzin Bold';
+}
+
+.article-author{
+    color: #fff;
+}
+
+br{
+    margin: 64px;
+}
+
+.article-text{
+    font-family: 'Inter', sans-serif;
+}
+
+.article-image{
+    margin-top: 8px;
+}

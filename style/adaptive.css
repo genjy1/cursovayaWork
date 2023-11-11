@@ -5,7 +5,6 @@
 }
 
 .mobile__header{
-    background-color: #010101;
     display: flex;
     align-items: center;
     /* gap: 295px; */
@@ -22,5 +21,9 @@
 
 .burger:not(:last-child){
     margin: 0 0 8px;
+}
+
+.burger__list_item{
+    max-width: 380px;
 }
 
