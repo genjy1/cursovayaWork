@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap');
+
+*{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Inter', sans-serif;
+}
+
+.main{
+    padding: 76px 0;
+}
+
+.admin-header{
+    border-radius: 12px;
+    border: 1px solid #fff;
+    display: block;
+    padding: 30px 30px 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    background-color: #5C3881;
+}
+
+.buttons__wrapper{
+    margin: 64px 0 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-entity{
+    background: #5C3881;
+    color: #fff;
+    border-radius: 12px;
+    border: 1px solid #fff;
+    padding: 35px 31px;
+}
+
+.admin__table{
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, 453px);
+    background: #5C3881;
+    color: #fff;
+}
+
+.table-header{
+    text-align: center;
+    padding: 6px 0;
+    text-transform: capitalize;
+    font-weight: 700;
+    border-bottom: 4px solid white;
+}
+
+.td{
+    border-bottom: 4px solid white;
+    padding: 9px 0;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.td:not(.team__td){
+    border-right: 4px solid white;
+}
+
+.table-header:not(.team-header){
+    border-right: 4px solid white;
+}
+
+.td:nth-child(odd){
+    background: #8A5CB9;
+}
+
+
