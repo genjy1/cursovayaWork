@@ -1,20 +1,12 @@
 'use strict'
 
-const players = [{
-    team: "Cloud9",
-    nickname: "electronic",
-    rating: 1.30,
-    maps: 1472
-}];
-const teams = [{
-    img:'Cloud9',
-    name: 'Cloud9',
-    rating: 1.02,
-    maps: 1570
-}];
+import { getData } from "./getData.js"
+
+const players = await getData('players')
+const teams = await getData('teams')
 
 const createStatsPlayer = (player) => `
-    <td class="player__td player__img td" style="background-image:url('./image/teams/${player.team}.png')">
+    <td class="player__td player__img td" style="background-image:url('./image/teams/${player.team}.svg')">
         <img class="player-img stats__img" src="./image/players/${player.nickname}.png">
     </td>
     <td class="player__td player-stats td">${player.nickname}</td>
@@ -23,7 +15,7 @@ const createStatsPlayer = (player) => `
 `
 
 const createStatsTeams = (team) => `
-    <td class="team__td td team__img"><img src="./image/teams/${team.img + '.png' }" class="team-img stats__img"></td>
+    <td class="team__td td team__img"><img src="./image/teams/${team.name + '.svg' }" class="team-img stats__img"></td>
     <td class="team__td team-stats td">${team.name}</td>
     <td class="team__td team-stats td">${team.rating} Рейтинг</td>
     <td class="team__td team-stats td">${team.maps}</td>

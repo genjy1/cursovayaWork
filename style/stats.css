@@ -12,11 +12,23 @@
     }
 }
 
+@media screen and (max-width:425px) {
+    .stats__row{
+        width: 389px;
+    }
+}
+
 .stats__th{
     color: var(--secondary-color);
     font-family: 'Benzin Bold';
     font-size: 32px;
     text-align: left;
+}
+
+.stats__body{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .main{

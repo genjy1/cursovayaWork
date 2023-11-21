@@ -27,6 +27,7 @@
 }
 
 .author-link{
+    z-index: -1;
     color: #fff;
     font-size: 10px;
     font-family: 'Benzin Regular';

@@ -18,6 +18,10 @@ window.addEventListener('click', ({target})=>{
         modal.remove()
 
     }
+
+    if (target.classList.contains('login-btn')) {
+        location.href = './index.html'
+    }
 })
 
 entityButtons.forEach(e => e.addEventListener('click', () => {
@@ -37,10 +41,10 @@ entityButtons.forEach(e => e.addEventListener('click', () => {
                 </header>
                 <div class="form__wrapper">
                     <form id="player" class="admin__form">
-                        <input type="text" placeholder="Введите название команды игрока" class="modal-input player__modal-team" name="team">
-                        <input type="text" placeholder="Введите никнейм игрока" class="modal-input player__modal-nick" name="nickname">
-                        <input type="number" placeholder="Введите рейтинг игрока" class="modal-input player__modal-rating" step="any" name="rating">
-                        <input type="number" placeholder="Введите количество сыгранных карт игрока" class="modal-input player__modal-maps" name="maps">
+                        <input type="text" placeholder="Введите название команды игрока" class="modal-input_admin player__modal-team" name="team">
+                        <input type="text" placeholder="Введите никнейм игрока" class="modal-input_admin player__modal-nick" name="nickname">
+                        <input type="number" placeholder="Введите рейтинг игрока" class="modal-input_admin player__modal-rating" step="any" name="rating">
+                        <input type="number" placeholder="Введите количество сыгранных карт игрока" class="modal-input_admin player__modal-maps" name="maps">
                         <label class="file__label">Прикрепить картинку<input type="file" style="display:none"></label>
                         <input type="submit" class="modal-submit" value="Отправить">
                     </form>
@@ -79,9 +83,9 @@ entityButtons.forEach(e => e.addEventListener('click', () => {
                 </header>
                 <div class="form__wrapper">
                     <form id="team" class="admin__form">
-                        <input type="text" placeholder="Введите название команды" class="modal-input team__modal-name" name="name">
-                        <input type="number" placeholder="Введите рейтинг команд" class="modal-input team__modal-rating" step="any" name="rating">
-                        <input type="number" placeholder="Введите количество сыгранных карт игрока" class="modal-input team__modal-maps" name="maps">
+                        <input type="text" placeholder="Введите название команды" class="modal-input_admin team__modal-name" name="name">
+                        <input type="number" placeholder="Введите рейтинг команд" class="modal-input_admin team__modal-rating" step="any" name="rating">
+                        <input type="number" placeholder="Введите количество сыгранных карт игрока" class="modal-input_admin team__modal-maps" name="maps">
                         <label class="file__label">Прикрепить картинку<input type="file" style="display:none"></label>
                         <input type="submit" class="modal-submit" value="Отправить">
                     </form>
@@ -114,13 +118,13 @@ entityButtons.forEach(e => e.addEventListener('click', () => {
                 </header>
                 <div class="form__wrapper">
                     <form id="championship" class="admin__form">
-                        <input type="text" placeholder="Введите название чемпионата" class="modal-input championship__modal-name" name="fullName">
-                        <input type="text" placeholder="Введите короткое название чемпионата" class="modal-input championship__modal-name_short" name="shortName">
-                        <input type="number" placeholder="Введите призовой фонд чемпионата" class="modal-input championship__modal-prizepool" name="prizePool">
-                        <input type="text" placeholder="Введите дату проведения" class="modal-input championship__modal-date" name="date">
-                        <input type="number" placeholder="Введите количество игроков" class="modal-input championship__modal-date" name="date">
-                        <input type="text" placeholder="Введите название организатора" class="modal-input championship__modal-date" name="date">
-                        <input type="text" placeholder="Введите уровень" class="modal-input championship__modal-date" name="date">
+                        <input type="text" placeholder="Введите название чемпионата" class="modal-input_admin championship__modal-name" name="fullName">
+                        <input type="text" placeholder="Введите короткое название чемпионата" class="modal-input_admin championship__modal-name_short" name="shortName">
+                        <input type="number" placeholder="Введите призовой фонд чемпионата" class="modal-input_admin championship__modal-prizepool" name="prizePool">
+                        <input type="text" placeholder="Введите дату проведения" class="modal-input_admin championship__modal-date" name="date">
+                        <input type="number" placeholder="Введите количество игроков" class="modal-input_admin championship__modal-date" name="date">
+                        <input type="text" placeholder="Введите название организатора" class="modal-input_admin championship__modal-date" name="date">
+                        <input type="text" placeholder="Введите уровень" class="modal-input_admin championship__modal-date" name="date">
                         <label class="file__label">Прикрепить картинку<input type="file" style="display:none"></label>
                         <input type="submit" class="modal-submit" value="Отправить">
                     </form>
