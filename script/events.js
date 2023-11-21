@@ -1,21 +1,25 @@
 'use strict'
 
-export const events = [{
-    tier:1,
-    organizer:'Valve',
-    tournament: 'The International',
-    date:'14-29.10.2023',
-    prize: '3 141 000 $',
-    players: 100,
-    sponsored:true
-}]
+import { getData } from "./getData.js";
+
+// export const events = [{
+//     tier:1,
+//     organizer:'Valve',
+//     tournament: 'The International',
+//     date:'14-29.10.2023',
+//     prize: '3 141 000 $',
+//     players: 100,
+//     sponsored:true
+// }]
+
+export const events = await getData('ongoingevents')
 
 const createEvent = (events) => `
     <td class="events__td">${events.tier}</td>
     <td class="events__td">${events.organizer}</td>
-    <td class="events__td">${events.tournament}</td>
+    <td class="events__td">${events.fullName}</td>
     <td class="events__td">${events.date}</td>
-    <td class="events__td">${events.prize}</td>
+    <td class="events__td">${events.prizePool}</td>
     <td class="events__td">${events.players}</td>
 `
 const createRows = (data) => 

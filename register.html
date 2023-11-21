@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESNHub - Главная</title>
+    <title>Регистрация</title>
     <link rel="stylesheet" href="./style/register.css">
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
 </head>
@@ -34,6 +34,7 @@
                     <input type="email" name="email" id="repeatEmailRegister" placeholder="Подтвердите email" class="register-input input" autocomplete="email">
                     <input type="password" name="password" id="passwordRegister" placeholder="Введите пароль" class="register-input input" autocomplete="current-password">
                     <input type="password" name="repeatPassword" id="repeatPasswordRegister" placeholder="Подтвердите пароль" class="register-input input" autocomplete="off">
+                    <label for="passwordRegister" class="error-container"></label>
                 </div>
                 <input type="submit" value="Отправить" class="modal-input input submit">
             </form>
@@ -41,4 +42,5 @@
     </main>
 <body>
 <script type="module" src="./index.js"></script>
+<script type="module" src="./script/validate.js"></script>
 </html>

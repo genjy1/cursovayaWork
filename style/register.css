@@ -41,3 +41,7 @@
 #register{
     padding: 87px 26px 75px;
 }
+
+#emailRegister , #passwordRegister, #repeatEmailRegister, #repeatPasswordRegister{
+    outline: none;
+}

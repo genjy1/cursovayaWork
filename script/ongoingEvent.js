@@ -2,7 +2,7 @@ import { getData } from './getData.js'
 
 export const setOnGoingEvent = async ()=> {
     const events = await getData('ongoingevents');
-    const ongoingEvent = events.at(-2);
+    const ongoingEvent = events.at(-1);
     const eventContainer = document.querySelector('.event')
     const eventInformationContainer = eventContainer.querySelector('.event-information_container');
     const eventName = eventInformationContainer.querySelector('.event-name');

@@ -5,5 +5,7 @@ export const postData = (table, body) => {
         headers:{
             "Content-Type": "application/json",
         },
-    }).then(location.reload())
+    }).then((response) => {if (response.ok) {
+        location.reload()
+    }})
 }
