@@ -410,6 +410,7 @@ body{
 }
 
 .input{
+    display: block;
     width: 333px;
     height: 44px;
     border: 1px solid #FF8C00;

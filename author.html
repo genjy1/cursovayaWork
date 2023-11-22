@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ESNHub - Новости</title>
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./style/author.css">
     <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon">
 </head>
 <body>
     <header class="header">
         <div class="header__wrapper container"><div class="logo__wrapper"><a href="./index.html"><img src="./image/logo.svg" alt="ESNHub Logo" class="logo-img"></a></div><nav class="nav"><ul class="header__nav-list nav-list"><li class="list_item"><a href="./news.html" class="header-link link">Новости</a></li><li class="list_item"><a href="./articles.html" class="header-link link">Статьи</a></li><li class="list_item"><a href="./events.html" class="header-link link">Турниры</a></li><li class="list_item"><a href="./stats.html" class="header-link link">Статистика</a></li></ul></nav><div class="header__login"><button class="login-btn">Войти</button></div></div>
     </header>
+    <main class="main container">
+            <form id="authorForm">
+                <input type="text" name="name" id="name" class="input author-input" placeholder="Введите название статьи">
+                <input type="text" name="author" id="author" class="input author-input" placeholder="Введите псевдоним">
+                <textarea name="text" id="textArea" placeholder="Введите текст статьи" class="input"></textarea>
+                <label for="image" class="image-label input">Прикрепите изображение<input type="file" name="img" id="image" style="display: none;"></label>
+                <input type="submit" value="Отправить" class="input ">
+            </form>
+    </main>
 </body>
-<script src="./index.js" type="module"></script> 
+<script src="./index.js" type="module"></script>
+<script type="module" src="./script/author.js"></script> 
 </html>

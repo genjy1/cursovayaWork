@@ -1,0 +1,51 @@
+@import url('../index.css');
+
+#authorForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#authorForm > .author-input{
+    width: 583px;
+    text-align: left;
+    padding: 0 10px 0;
+}
+
+.input::placeholder{
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+#textArea{
+    width: 583px;
+    text-align: left;
+    display: block;
+    resize: none;
+    overflow-x: hidden;
+    height: 483px;
+    margin: 16px 0 32px ;
+    text-align: left;
+    padding-top: 12px;
+    padding-left: 17px;
+}
+
+#name{
+    margin: 0 0 4px;
+}
+
+.image-label{
+    display: block;
+    padding: 12px 17px;
+    margin: 0 0 96px;
+    width: 583px;
+}
+
+
+
+input[type="submit"]{
+    width: 583px;
+    text-align: center;
+}

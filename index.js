@@ -1,4 +1,5 @@
 'use strict'
+import { login } from "./script/login.js";
 import { createBanner } from "./script/genBanner.js";
 import { createFooter } from "./script/footer.js";
 import { renderArticle } from "./script/createArticle.js";
@@ -111,7 +112,7 @@ if(window.outerWidth < 426){
 }
 
 createModal();
-controlModal();
+controlModal(login);
 createBanner();
 createFooter();
 if (currentURL.includes('register')) {

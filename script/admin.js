@@ -25,8 +25,8 @@ window.addEventListener('click', ({target})=>{
 })
 
 entityButtons.forEach(e => e.addEventListener('click', () => {
+    const sendPlayer = () => {
     if (e.classList.contains('player')) {
-        console.log(e);
         let modal;
         const playerModal = `
             <div class="modal-admin modal">
@@ -65,9 +65,9 @@ entityButtons.forEach(e => e.addEventListener('click', () => {
             postData('players', playerData);
             console.log(playerData);
         })
-        console.log(modal);
     }
-    if (e.classList.contains('team')) {
+    }
+    const sendTeam = () => {if (e.classList.contains('team')) {
         console.log(e);
         let modal;
         const playerModal = `
@@ -101,9 +101,8 @@ entityButtons.forEach(e => e.addEventListener('click', () => {
             const teamData = Object.fromEntries(formData);
             postData('teams', teamData)
         })
-    }
-    if (e.classList.contains('championship')) {
-        console.log(e);
+    }}
+    const sendChampionship =() => {if (e.classList.contains('championship')) {
         let modal;
         const playerModal = `
             <div class="modal-admin modal">
@@ -122,9 +121,9 @@ entityButtons.forEach(e => e.addEventListener('click', () => {
                         <input type="text" placeholder="Введите короткое название чемпионата" class="modal-input_admin championship__modal-name_short" name="shortName">
                         <input type="number" placeholder="Введите призовой фонд чемпионата" class="modal-input_admin championship__modal-prizepool" name="prizePool">
                         <input type="text" placeholder="Введите дату проведения" class="modal-input_admin championship__modal-date" name="date">
-                        <input type="number" placeholder="Введите количество игроков" class="modal-input_admin championship__modal-date" name="date">
+                        <input type="number" placeholder="Введите количество игроков" class="modal-input_admin championship__modal-date" name="players">
                         <input type="text" placeholder="Введите название организатора" class="modal-input_admin championship__modal-date" name="date">
-                        <input type="text" placeholder="Введите уровень" class="modal-input_admin championship__modal-date" name="date">
+                        <input type="text" placeholder="Введите уровень" class="modal-input_admin championship__modal-date" name="tier">
                         <label class="file__label">Прикрепить картинку<input type="file" style="display:none"></label>
                         <input type="submit" class="modal-submit" value="Отправить">
                     </form>
@@ -140,8 +139,11 @@ entityButtons.forEach(e => e.addEventListener('click', () => {
             const championshipData = Object.fromEntries(formData);
             postData('ongoingevents', championshipData)
         })
-        console.log(modal);
-    }
+    }}
+
+    sendTeam();
+    sendPlayer();
+    sendChampionship();
 }))
 
 
