@@ -1,3 +1,9 @@
+@media screen and (max-width:425px) {
+    .events__table{
+        width: 380px;
+    }
+}
+
 .events__table, .mobile__table{
     border-collapse: collapse;
 }
@@ -9,7 +15,6 @@
     color: var(--secondary-color);
     border: 4px solid var(--secondary-color);
     text-align: center;
-    text-wrap: nowrap;
 }
 
 .events__th{
@@ -17,6 +22,8 @@
     font-size: 24px;
     font-weight: 700;
 }
+
+
 
 /* .events__th:nth-child(1), .events__td:nth-child(1){
     padding: 34px 84px
@@ -57,4 +64,14 @@
     background: transparent;
     border: 4px solid var(--secondary-color);
     color: var(--secondary-color);
+}
+
+.events-filter>input:focus{
+    cursor: pointer;
+    font-size: 24px;
+    padding: 11px 16px;
+    border-radius: 4px;
+    background: transparent;
+    border: 4px solid #6600CC;
+    color: #6600CC;
 }

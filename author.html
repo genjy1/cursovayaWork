@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESNHub - Новости</title>
+    <title>ESNHub - Добавить запись</title>
     <link rel="stylesheet" href="./style/author.css">
     <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon">
 </head>
@@ -17,6 +17,7 @@
                 <input type="text" name="author" id="author" class="input author-input" placeholder="Введите псевдоним">
                 <textarea name="text" id="textArea" placeholder="Введите текст статьи" class="input"></textarea>
                 <label for="image" class="image-label input">Прикрепите изображение<input type="file" name="img" id="image" style="display: none;"></label>
+                <label for="news" style="color: white;" class="news-label"><input type="checkbox" name="news" id="news" style="display: none;" value="true"><span>Это новость</span></label>
                 <input type="submit" value="Отправить" class="input ">
             </form>
     </main>

@@ -24,6 +24,19 @@ window.addEventListener('click', ({target})=>{
     }
 })
 
+const toBase64 = file => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.addEventListener('loadend', () => {
+        resolve(reader.result);
+    })
+
+    reader.addEventListener('error', err => {
+        reject(err)
+    })
+
+    reader.readAsDataURL(file)
+});
+
 entityButtons.forEach(e => e.addEventListener('click', () => {
     const sendPlayer = () => {
     if (e.classList.contains('player')) {
@@ -45,7 +58,7 @@ entityButtons.forEach(e => e.addEventListener('click', () => {
                         <input type="text" placeholder="Введите никнейм игрока" class="modal-input_admin player__modal-nick" name="nickname">
                         <input type="number" placeholder="Введите рейтинг игрока" class="modal-input_admin player__modal-rating" step="any" name="rating">
                         <input type="number" placeholder="Введите количество сыгранных карт игрока" class="modal-input_admin player__modal-maps" name="maps">
-                        <label class="file__label">Прикрепить картинку<input type="file" style="display:none"></label>
+                        <label class="file__label">Прикрепить картинку<input type="file" style="display:none" name="image" accept=.jpg, .jpeg, .png></label>
                         <input type="submit" class="modal-submit" value="Отправить">
                     </form>
                 </div>
@@ -54,16 +67,14 @@ entityButtons.forEach(e => e.addEventListener('click', () => {
         overlay.insertAdjacentHTML('afterbegin', playerModal)
         overlay = document.querySelector('.overlay');
         modal = overlay.querySelector('#player')
-        modal.addEventListener('submit', (e) => {
+
+        modal.addEventListener('submit', async(e) => {
             e.preventDefault();
-            const playerModalTeam = modal.querySelector('.player__modal-team');
-            const playerModalNick = modal.querySelector('.player__modal-nick');
-            const playerModalRating = modal.querySelector('.player__modal-rating');
-            const playerModalMaps = modal.querySelector('.player__modal-team');
             const formData = new FormData(modal);
             const playerData = Object.fromEntries(formData);
+            playerData.image = await toBase64(playerData.image)
             postData('players', playerData);
-            console.log(playerData);
+            console.log(playerData.image);
         })
     }
     }
@@ -84,9 +95,9 @@ entityButtons.forEach(e => e.addEventListener('click', () => {
                 <div class="form__wrapper">
                     <form id="team" class="admin__form">
                         <input type="text" placeholder="Введите название команды" class="modal-input_admin team__modal-name" name="name">
-                        <input type="number" placeholder="Введите рейтинг команд" class="modal-input_admin team__modal-rating" step="any" name="rating">
-                        <input type="number" placeholder="Введите количество сыгранных карт игрока" class="modal-input_admin team__modal-maps" name="maps">
-                        <label class="file__label">Прикрепить картинку<input type="file" style="display:none"></label>
+                        <input type="number" placeholder="Введите рейтинг команды" class="modal-input_admin team__modal-rating" step="any" name="rating">
+                        <input type="number" placeholder="Введите количество карт команды" class="modal-input_admin team__modal-maps" name="maps">
+                        <label class="file__label">Прикрепить картинку<input type="file" style="display:none" name="image"></label>
                         <input type="submit" class="modal-submit" value="Отправить">
                     </form>
                 </div>
@@ -95,10 +106,11 @@ entityButtons.forEach(e => e.addEventListener('click', () => {
         overlay.insertAdjacentHTML('afterbegin', playerModal)
         overlay = document.querySelector('.overlay');
         modal = overlay.querySelector('#team')
-        modal.addEventListener('submit', (e) => {
+        modal.addEventListener('submit', async(e) => {
             e.preventDefault();
             const formData = new FormData(modal)
             const teamData = Object.fromEntries(formData);
+            teamData.image = await toBase64(teamData.image)
             postData('teams', teamData)
         })
     }}
@@ -120,11 +132,12 @@ entityButtons.forEach(e => e.addEventListener('click', () => {
                         <input type="text" placeholder="Введите название чемпионата" class="modal-input_admin championship__modal-name" name="fullName">
                         <input type="text" placeholder="Введите короткое название чемпионата" class="modal-input_admin championship__modal-name_short" name="shortName">
                         <input type="number" placeholder="Введите призовой фонд чемпионата" class="modal-input_admin championship__modal-prizepool" name="prizePool">
-                        <input type="text" placeholder="Введите дату проведения" class="modal-input_admin championship__modal-date" name="date">
+                        <input type="text" placeholder="Введите дату начала проведения" class="modal-input_admin championship__modal-date" name="startDate" onfocus="(this.type='date')">
+                        <input type="text" placeholder="Введите дату конца проведения" class="modal-input_admin championship__modal-date" name="endDate" onfocus="(this.type='date')">
                         <input type="number" placeholder="Введите количество игроков" class="modal-input_admin championship__modal-date" name="players">
-                        <input type="text" placeholder="Введите название организатора" class="modal-input_admin championship__modal-date" name="date">
+                        <input type="text" placeholder="Введите название организатора" class="modal-input_admin championship__modal-organizer" name="organizer">
                         <input type="text" placeholder="Введите уровень" class="modal-input_admin championship__modal-date" name="tier">
-                        <label class="file__label">Прикрепить картинку<input type="file" style="display:none"></label>
+                        <label class="file__label">Прикрепить картинку<input type="file" style="display:none" name="image"></label>
                         <input type="submit" class="modal-submit" value="Отправить">
                     </form>
                 </div>
@@ -133,10 +146,11 @@ entityButtons.forEach(e => e.addEventListener('click', () => {
         overlay.insertAdjacentHTML('afterbegin', playerModal)
         overlay = document.querySelector('.overlay');
         modal = overlay.querySelector('#championship')
-        modal.addEventListener('submit', (e) => {
+        modal.addEventListener('submit', async(e) => {
             e.preventDefault();
             const formData = new FormData(modal)
             const championshipData = Object.fromEntries(formData);
+            championshipData.image = await toBase64(championshipData.image)
             postData('ongoingevents', championshipData)
         })
     }}

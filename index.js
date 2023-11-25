@@ -7,10 +7,12 @@ import { controlModal, createModal } from "./script/modal.js";
 import { register } from "./script/register.js";
 import { renderNews,  } from "./script/createNews.js";
 import { getData } from "./script/getData.js";
-import { renderEvent, events } from "./script/events.js";
 import { setOnGoingEvent } from "./script/ongoingEvent.js";
+import { base64 } from "./script/base64.js";
 
 const articlesWrapper = document.querySelector('.articles');
+const isLogged = localStorage.getItem('logged');
+const isAdmin = localStorage.getItem('admin')
 const doc = window.document;
 const links = doc.querySelectorAll(".header-link"); // любой нужный селектор
 const linksCount = links.length;
@@ -74,10 +76,6 @@ for (let i = 0; i < linksCount; i++) {
     links[i].classList.toggle("active-link");
     item[i].classList.toggle('active-link')
 }
-}
-
-if (currentURL.includes('events.html')) {
-  renderEvent(events)
 }
 
 const adaptive = () => {
@@ -183,3 +181,23 @@ if (!currentURL.includes('index')) {
     
 
 }
+
+if (isLogged) {
+  const loginButton = document.querySelector('.login-btn');
+  const header = document.querySelector('.header__login')
+  const exitButton = document.createElement('button');
+
+  exitButton.classList.add('exit-button');
+  exitButton.textContent = 'Выйти';
+
+  exitButton.addEventListener('click', () => {
+    localStorage.clear(); 
+    location.href = './index.html'
+    }
+  )
+
+  header.append(exitButton);
+  loginButton.remove();
+    
+}
+

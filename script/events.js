@@ -12,30 +12,91 @@ import { getData } from "./getData.js";
 //     sponsored:true
 // }]
 
-export const events = await getData('ongoingevents')
+const events = await getData('ongoingevents')
+const todayButton = document.querySelector('#ongoing')
+const featuredButton = document.querySelector('#featured')
+const allButton = document.querySelector('#all')
 
-const createEvent = (events) => `
-    <td class="events__td">${events.tier}</td>
-    <td class="events__td">${events.organizer}</td>
-    <td class="events__td">${events.fullName}</td>
-    <td class="events__td">${events.date}</td>
-    <td class="events__td">${events.prizePool}</td>
-    <td class="events__td">${events.players}</td>
+
+const createEvent = (event) => `
+    <td class="events__td">${event.tier}</td>
+    <td class="events__td">${event.organizer}</td>
+    <td class="events__td">${event.fullName}</td>
+    <td class="events__td">${event.startDate +' - '+ event.endDate}</td>
+    <td class="events__td">${event.prizePool + '$'}</td>
+    <td class="events__td">${event.players}</td>
 `
 const createRows = (data) => 
     data.map(events => {
         const tr = document.createElement('tr');
         tr.classList.add('events__row');
-        events.sponsored ? tr.dataset.sponsored = true : tr.dataset.sponsored = false;
         tr.insertAdjacentHTML('beforeend', createEvent(events))
-        console.log(events);
-
+        tr.dataset.date = events.startDate
         return tr;
     });
 
-export const renderEvent = data => {
+const renderEvent = data => {
     const tbody = document.querySelector('.events__body');
     tbody.textContent ="";
     const events = createRows(data);
     tbody.append(...events)
 }
+
+renderEvent(events)
+
+todayButton.addEventListener('click', () => {
+    const today = new Date().toLocaleDateString()
+    const rows = document.querySelectorAll('.events__row')
+
+    for(let i = 0;i < rows.length; i++){
+
+        const datasetDate = new Date(rows[i].dataset.date).toLocaleDateString()
+        if (datasetDate != today) {
+            rows[i].style.display = 'none'
+        }else {
+            rows[i].removeAttribute('style')
+        }
+    }
+
+})
+
+featuredButton.addEventListener('click', () => {
+    const today = new Date().toLocaleDateString()
+    const rows = document.querySelectorAll('.events__row')
+
+    for(let i = 0;i < rows.length; i++){
+
+        const datasetDate = new Date(rows[i].dataset.date).toLocaleDateString()
+        if (datasetDate <= today) {
+            rows[i].style.display = 'none'
+        }else {
+            rows[i].removeAttribute('style')
+        }
+    }
+
+})
+
+allButton.addEventListener('click', () => {
+    const today = new Date().toLocaleDateString()
+    const rows = document.querySelectorAll('.events__row')
+
+    for(let i = 0;i < rows.length; i++){
+
+        rows[i].removeAttribute('style')
+
+    }
+
+})
+
+// featuredButton.addEventListener('click', () => {
+//     const today = new Date()
+//     const rows = document.querySelectorAll('.events__row')
+//     rows.forEach(e => {
+//         console.log();
+//             if (Date.parse(today) < Date.parse(e.dataset.date)) {
+//                 e.remove()
+//             }
+//         }
+//     )   
+// })
+

@@ -7,7 +7,7 @@ const teams = await getData('teams')
 
 const createStatsPlayer = (player) => `
     <td class="player__td player__img td" style="background-image:url('./image/teams/${player.team}.svg')">
-        <img class="player-img stats__img" src="./image/players/${player.nickname}.png">
+        <img class="player-img stats__img" src="${player.image}">
     </td>
     <td class="player__td player-stats td">${player.nickname}</td>
     <td class="player__td player-stats td">${player.rating} Рейтинг</td>
