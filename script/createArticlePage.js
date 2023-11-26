@@ -25,9 +25,10 @@ const setId = () => {
 export const renderArticlePage = async() => {
     const title = document.querySelector('title')
     const main = document.querySelector('.main');
-    const id = setId()
+    const isNews = new URLSearchParams(location.search).has('news')
+    const id = new URLSearchParams(location.search).get('id');
     let data 
-    if (!location.href.includes('news')) {
+    if (!isNews) {
         data = await getData(`articles/${id}`)
     }else{
         data = await getData(`news/${id}`)

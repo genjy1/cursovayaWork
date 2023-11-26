@@ -19,34 +19,25 @@
                 <div class="setting-profile"><img src="./image/placeholder.svg" alt="" class="profile-img"></div>
                 <form class="refactor-profile">
                     <div class="profile__inputs">
-                        <input type="password" name="password" id="" class="input" placeholder="Введите новый пароль"><input type="password" name="repeatPassword" id="" class="input" placeholder="Повторите пароль">
-                        <input type="email" name="email" id="" class="input" placeholder="Введите новый email"><input type="email" name="repeatEmail" id="" class="input" placeholder="Повторите email">
+                        <input type="password" name="password" id="passwordProfile" class="input" placeholder="Введите новый пароль">
+                        <input type="email" name="email" id="emailProfile" class="input" placeholder="Введите новый email">
                     </div>
                     <input type="submit" value="Отправить" class="input settings-input">
                 </form>
                 </div>
             </div>
-            <div class="settings__container">
-                <h2 class="setting-name">Изменение часового пояса</h2>
-                <div class="setting__wrapper timezone-changer">
-                    <form action="" class="timezone__form">
-
-                    </form>
-                </div>
-            </div>
-            <div class="settings__container">
-                <h2 class="setting-name">Изменение темы сайта</h2>
-            </div>
             <div class="settings__container author__container">
                 <h2 class="setting-name">Хотите стать автором?</h2>
-                <form action="" class="author-form">
+                <form class="author-form">
                     <fieldset class="settings__fieldset">
-                        <label class="form-label">Выберите</label>
-                        <label for="checkboxTrue" class="radio-label">Да
-                            <input type="radio" name="Yes" id="checkboxTrue" class="checkbox">
+                        Выберите
+                        <label class="label__container">Да
+                            <input type="radio" checked="checked" name="radio">
+                            <span class="checkmark"></span>
                         </label>
-                        <label for="checkboxFalse" class="radio-label">Нет
-                            <input type="radio" name="No" id="checkboxFalse" class="checkbox">
+                        <label class="label__container">Нет
+                            <input type="radio" name="radio">
+                            <span class="checkmark"></span>
                         </label>
                     </fieldset>
                     <input type="submit" value="Отправить" class="input author-submit">
@@ -56,5 +47,5 @@
     </main>
 </body>
 <script src="./index.js" type="module"></script> 
-<script src="./script/profile.js"></script>
+<script src="./script/profile.js" type="module"></script>
 </html>

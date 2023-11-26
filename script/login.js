@@ -23,7 +23,8 @@ export const login = async(user) => {
         }
         if (e.password == user.password && e.email == user.email) {
             localStorage.setItem('logged', true);
-            location.href = './profile.html'
+            location.href = `./profile.html?id=${e.id}`
+            
             return true
         }
     }
