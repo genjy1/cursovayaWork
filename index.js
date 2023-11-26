@@ -8,7 +8,7 @@ import { register } from "./script/register.js";
 import { renderNews,  } from "./script/createNews.js";
 import { getData } from "./script/getData.js";
 import { setOnGoingEvent } from "./script/ongoingEvent.js";
-import { base64 } from "./script/base64.js";
+// import { base64 } from "./script/base64.js";
 
 const articlesWrapper = document.querySelector('.articles');
 const isLogged = localStorage.getItem('logged');
@@ -172,9 +172,9 @@ if (!currentURL.includes('index')) {
     articlePreviewContainer.href = `article.html?id=${articlePreviewContainer.dataset.id}`
     previewImage.src = `${article.img}`;
     previewName.textContent = article.name;
-    gameIcon.src = article.gameIcon;
-    gameName.textContent = article.game;
-    dateText.textContent = article.date;
+    gameIcon.src = './image/icon.png';
+    gameName.textContent = 'CS2';
+    dateText.textContent = new Date(article.date).toLocaleString('ru-RU', {dateStyle:'short'});
     articlesWrapper.prepend(articlePreviewContainer)
   })
   

@@ -121,6 +121,20 @@
     text-align: center;
 }
 
+.content__wrapper{
+    display: flex;
+    max-width: 452px;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4px;
+    height: 49px;
+}
+
+.icons__wrapper{
+    display: flex;
+    gap: 6px;
+}
+
 .admin__td:not(.team__td){
     border-right: 4px solid white;
 }
@@ -175,4 +189,41 @@ input::placeholder{
     padding: 12px 0;
     width: 532px;
     border-radius: 9px;
+}
+
+
+.delete{
+    background: transparent;
+    border:1px solid transparent;
+    cursor: pointer;
+    display: block;
+    height: 44px;
+    width: 44px;
+}
+
+.edit{
+    background: transparent;
+    border:1px solid transparent;
+    cursor: pointer;
+    display: block;
+    height: 44px;
+    width: 44px;
+}
+
+.delete > path{
+    background: transparent;
+    border:1px solid transparent;
+    cursor: pointer;
+    display: block;
+    height: 44px;
+    width: 44px;
+}
+
+.edit > path{
+    background: transparent;
+    border:1px solid transparent;
+    cursor: pointer;
+    display: block;
+    height: 44px;
+    width: 44px;
 }

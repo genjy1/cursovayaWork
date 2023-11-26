@@ -8,8 +8,8 @@ export const setOnGoingEvent = async ()=> {
     const eventName = eventInformationContainer.querySelector('.event-name');
     const eventDate = eventInformationContainer.querySelector('.event-date');
     const eventPrizePool = eventInformationContainer.querySelector('.event-prizepool');
-
-    eventContainer.style.backgroundImage = `url(${ongoingEvent.img})`;
+    const options = {dateStyle:'short'}
+    eventContainer.style.backgroundImage = `url(${ongoingEvent.image})`;
     
     window.addEventListener('resize', () => {
         if (window.outerWidth === 425) {
@@ -21,8 +21,8 @@ export const setOnGoingEvent = async ()=> {
     if (window.outerWidth === 425) {
         eventName.textContent = ongoingEvent.shortName;
     }
-    eventDate.textContent = ongoingEvent.date;
-    eventPrizePool.textContent = ongoingEvent.prizePool + '$';
+    eventDate.textContent = new Date(ongoingEvent.startDate).toLocaleString('ru-RU', options) + ' - ' + new Date(ongoingEvent.endDate).toLocaleString('ru-RU', options);
+    eventPrizePool.textContent = new Number(ongoingEvent.prizePool).toLocaleString() + '$';
     eventName.textContent = ongoingEvent.fullName;
 }
 

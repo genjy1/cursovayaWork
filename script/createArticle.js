@@ -7,7 +7,7 @@ const createArticle = (article) => `
     </div>
 	<div class="text__container article__text-wrapper">
 		<h2 class="text-header article__text-name">${article.name}</h2>
-		<p class="text-preview article__text-snippet">${article.preview}</p>
+		<p class="text-preview article__text-snippet">${article.text.slice(0,75) + '...'}</p>
 	<div class="article__text_author-wrapper">
 		<a class="author-link link" href="twitter.com/${article.author}">${article.author}</a>
 	</div>

@@ -241,7 +241,7 @@
         width: 100%;
         margin-top: 33px;
         background: var(--main-color);
-        background-size: cover;
+        background-size: contain;
         padding: 216px 0 0;
         background-repeat: no-repeat;
         background-position:50% ;

@@ -9,7 +9,7 @@ const createNews = (news) => `
             <h2 class="text-header">
                 ${news.name}
             </h2>
-            <p class="text-preview">${news.preview}</p>
+            <p class="text-preview">${news.text.slice(0,75) + '...'}</p>
             <a href="twitter.com/${news.author}" class="author-link link">${news.author}</a>
         </div>
     </a>`;
