@@ -10,6 +10,7 @@ import { getData } from "./script/getData.js";
 import { setOnGoingEvent } from "./script/ongoingEvent.js";
 // import { base64 } from "./script/base64.js";
 
+const users = await getData('users').then(response => console.log(response));
 const articlesWrapper = document.querySelector('.articles');
 const isLogged = localStorage.getItem('logged');
 const isAdmin = localStorage.getItem('admin')

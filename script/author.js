@@ -17,9 +17,6 @@ form.addEventListener('submit',async (e) => {
     }else {
         postData('articles', article);
     }
-
-    
-
     console.log(isNews);
 
 })

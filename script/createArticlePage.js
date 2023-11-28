@@ -2,26 +2,6 @@
 
 import { getData } from "./getData.js"
 
-const setId = () => {
-
-    if (location.href.includes('news=true')) {
-        const id = location.href.slice(48)
-        return id
-    }else if(location.href.includes('news=true') && location.href.includes('genjy1.github.io')){
-        const id = location.href.slice(65);
-        return id 
-    }
-
-    if (location.href.includes('127.0.0.1:5500')) {
-        const id = location.href.slice(38);
-        return id    
-    }else if(location.href.includes('genjy1.github.io')){
-        const id = location.href.slice(55);
-        return id 
-    }
-}
-
-
 export const renderArticlePage = async() => {
     const title = document.querySelector('title')
     const main = document.querySelector('.main');

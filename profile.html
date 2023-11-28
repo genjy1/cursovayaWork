@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESNHub - Новости</title>
+    <title>ESNHub - Профиль</title>
     <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="./style/profile.css">
 </head>
@@ -19,29 +19,25 @@
                 <div class="setting-profile"><img src="./image/placeholder.svg" alt="" class="profile-img"></div>
                 <form class="refactor-profile">
                     <div class="profile__inputs">
-                        <input type="password" name="password" id="passwordProfile" class="input" placeholder="Введите новый пароль">
                         <input type="email" name="email" id="emailProfile" class="input" placeholder="Введите новый email">
+                        <input type="password" name="password" id="passwordProfile" class="input" placeholder="Введите новый пароль">
+                        <label for="author" class="author-label"><input type="radio" name="author" id="author">Стать автором</label>
+                        <h2 class="setting-name">Хотите стать автором?</h2>
+                        <fieldset class="settings__fieldset">
+                            <label class="label__container">Да
+                                <input type="radio" name="author" value=true class="author-input true">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label__container">Нет
+                                <input type="radio" name="author" value=false checked="checked" class="author-input false">
+                                <span class="checkmark"></span>
+                            </label>
+                        </fieldset>
+                        <input type="submit" value="Отправить" class="input">
                     </div>
-                    <input type="submit" value="Отправить" class="input settings-input">
+
                 </form>
                 </div>
-            </div>
-            <div class="settings__container author__container">
-                <h2 class="setting-name">Хотите стать автором?</h2>
-                <form class="author-form">
-                    <fieldset class="settings__fieldset">
-                        Выберите
-                        <label class="label__container">Да
-                            <input type="radio" checked="checked" name="radio">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="label__container">Нет
-                            <input type="radio" name="radio">
-                            <span class="checkmark"></span>
-                        </label>
-                    </fieldset>
-                    <input type="submit" value="Отправить" class="input author-submit">
-                </form>
             </div>
         </div>
     </main>
